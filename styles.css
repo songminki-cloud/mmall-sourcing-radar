@@ -690,8 +690,8 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     padding: 11px;
   }
   .latest-card {
-    width: calc(100vw - 48px);
-    max-width: calc(100vw - 48px);
+    width: calc(100vw - 72px);
+    max-width: calc(100vw - 72px);
     padding: 19px;
   }
   .latest-card h2 {
