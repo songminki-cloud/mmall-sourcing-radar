@@ -644,21 +644,25 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
 }
 .card-top {
   display: grid;
-  grid-template-columns: 34px minmax(0, 1fr) auto;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
   align-items: start;
-  column-gap: 14px;
+  column-gap: 12px;
   row-gap: 8px;
   padding: 18px 18px 16px;
   border-bottom: 1px solid #000;
 }
 .item-number {
-  display: block;
-  padding-top: 2px;
-  border-top: 2px solid #000;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1;
-  font-weight: 900;
+  display: inline-flex;
+  min-width: 38px;
+  align-items: baseline;
+  justify-content: flex-start;
+  padding-top: 5px;
+  border-top: 3px solid #000;
+  color: #111;
+  font-size: 20px;
+  line-height: .9;
+  font-weight: 950;
+  letter-spacing: 0;
 }
 .card-title-block {
   min-width: 0;
@@ -674,8 +678,8 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 10px;
-  max-width: 120px;
+  gap: 8px;
+  max-width: 118px;
   padding-top: 2px;
 }
 .market-link {
@@ -690,8 +694,14 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   color: var(--secondary);
   font-size: 12px;
   font-weight: 900;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.market-link::after {
+  content: ">";
+  margin-left: 3px;
+  color: var(--muted);
+  font-weight: 900;
 }
 .memo {
   margin: 0;
@@ -893,19 +903,20 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   }
   .log-row { grid-template-columns: 1fr; gap: 3px; }
   .card-top {
-    grid-template-columns: 30px minmax(0, 1fr) auto;
-    column-gap: 10px;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    column-gap: 9px;
     row-gap: 6px;
     padding: 16px;
   }
   .item-number {
-    font-size: 14px;
+    min-width: 36px;
+    font-size: 19px;
   }
   .card-actions {
     grid-column: auto;
     justify-content: flex-end;
-    gap: 8px;
-    max-width: 78px;
+    gap: 7px;
+    max-width: 92px;
   }
   .card-top h3 { font-size: 24px; }
   .memo {
