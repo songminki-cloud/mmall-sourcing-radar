@@ -683,6 +683,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
 }
 .item-number {
   display: inline-flex;
+  grid-row: 1 / span 3;
   min-width: 38px;
   align-items: baseline;
   justify-content: flex-start;
@@ -696,8 +697,15 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
 }
 .card-title-block {
   min-width: 0;
+  display: contents;
+}
+.item-kicker {
+  grid-column: 2 / -1;
+  grid-row: 1;
 }
 .card-top h3 {
+  grid-column: 2 / -1;
+  grid-row: 3;
   margin: 5px 0 0;
   font-size: 28px;
   line-height: 1.15;
@@ -707,9 +715,11 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
 .card-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-  max-width: 118px;
+  justify-content: flex-start;
+  grid-column: 2 / -1;
+  grid-row: 2;
+  gap: 0;
+  max-width: none;
   padding-top: 2px;
 }
 .market-link {
@@ -727,11 +737,15 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   text-decoration: none;
   white-space: nowrap;
 }
-.market-link::after {
-  content: ">";
-  margin-left: 3px;
-  color: var(--muted);
-  font-weight: 900;
+.market-link + .market-link {
+  margin-left: 9px;
+  padding-left: 9px;
+  border-left: 1px solid var(--line);
+}
+.market-link:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .memo {
   margin: 0;
@@ -948,10 +962,11 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     font-size: 19px;
   }
   .card-actions {
-    grid-column: auto;
-    justify-content: flex-end;
-    gap: 7px;
-    max-width: 92px;
+    grid-column: 2 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    gap: 0;
+    max-width: none;
   }
   .card-top h3 { font-size: 24px; }
   .memo {
