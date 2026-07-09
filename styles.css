@@ -204,7 +204,7 @@ h2 {
   flex-wrap: wrap;
   gap: 7px;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 .latest-keywords span {
   display: inline-flex;
@@ -230,19 +230,14 @@ h2 {
 }
 .recent-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 .recent-card {
-  position: relative;
-  display: grid;
-  align-content: start;
-  gap: 8px;
-  min-height: 132px;
-  padding: 17px;
-  border: 1px solid #000;
-  border-radius: 8px;
-  background: #fff;
+  min-height: 0;
+  width: calc(100vw - 72px);
+  max-width: 100%;
+  justify-self: stretch;
 }
 .recent-card.featured {
   border-color: #000;
@@ -250,43 +245,20 @@ h2 {
   color: #fff;
 }
 .recent-card.plain {
-  border-color: #000;
+  border-color: var(--line-strong);
   background: #fff;
   color: #000;
 }
-.recent-card span {
+.recent-card.plain .latest-kicker {
   color: var(--muted);
-  font-size: 12px;
-  font-weight: 900;
 }
-.recent-card.featured span {
-  color: rgba(255,255,255,.66);
-}
-.recent-card strong {
-  font-size: 20px;
-  line-height: 1.2;
-}
-.recent-card em {
+.recent-card.plain p {
   color: var(--secondary);
-  font-size: 13px;
-  font-style: normal;
-  padding-right: 18px;
 }
-.recent-card.featured em {
-  color: rgba(255,255,255,.76);
-}
-.recent-card small {
-  margin-top: 4px;
-  color: inherit;
-  font-size: 12px;
-  font-weight: 900;
-  opacity: .7;
-}
-.recent-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding-right: 2px;
+.recent-card.plain .latest-keywords span {
+  border-color: var(--line);
+  color: #222;
+  background: #f7f7f7;
 }
 .card-arrow {
   color: inherit;
@@ -893,6 +865,8 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   }
   .recent-card {
     min-height: 0;
+    width: calc(100vw - 72px);
+    max-width: 100%;
   }
   .archive-head {
     display: grid;
