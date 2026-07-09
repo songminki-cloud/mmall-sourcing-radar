@@ -670,44 +670,57 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   padding: 19px 20px 16px;
   border-bottom: 1px solid #000;
 }
-.item-number {
-  display: inline-flex;
-  width: auto;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
-  font-size: 13px;
-  line-height: 1;
-  font-weight: 950;
-  letter-spacing: 0;
-  margin-right: 9px;
-  transform: translateY(-1px);
-}
 .card-title-block {
   min-width: 0;
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
-.card-meta-row {
-  display: flex;
-  flex-wrap: wrap;
+.card-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  min-width: 0;
+}
+.item-number {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 29px;
+  height: 29px;
   align-items: center;
-  gap: 6px 12px;
+  justify-content: center;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: 0;
 }
 .item-kicker {
   margin: 0;
   color: var(--secondary);
   font-size: 12px;
   font-weight: 850;
+  line-height: 1.25;
+  white-space: nowrap;
+  justify-self: end;
+  padding-top: 6px;
 }
 .card-top h3 {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
   margin: 0;
   font-size: 28px;
   line-height: 1.08;
   font-weight: 900;
   word-break: keep-all;
+}
+.card-top h3 span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .card-actions {
   display: flex;
@@ -715,7 +728,8 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   justify-content: flex-start;
   gap: 6px;
   max-width: none;
-  padding-top: 0;
+  padding-left: 39px;
+  padding-top: 1px;
 }
 .market-link {
   display: inline-flex;
@@ -959,14 +973,20 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     padding: 19px 18px 16px;
   }
   .item-number {
-    font-size: 13px;
-    margin-right: 8px;
+    width: 27px;
+    height: 27px;
+    font-size: 11px;
   }
-  .card-meta-row { gap: 6px 10px; }
+  .card-title-row { gap: 8px; }
+  .item-kicker {
+    font-size: 11px;
+    padding-top: 6px;
+  }
   .card-actions {
     justify-content: flex-start;
     gap: 6px;
     max-width: none;
+    padding-left: 37px;
   }
   .card-top h3 { font-size: 25px; }
   .memo {
