@@ -14,6 +14,7 @@
   --down: #b3261e;
   --flat-bg: #eef1f4;
   --warning-bg: #fff4e5;
+  --page-pad: 24px;
 }
 
 * { box-sizing: border-box; }
@@ -36,7 +37,7 @@ button, input { font: inherit; }
   min-height: 100vh;
 }
 .home-hero, .report-hero {
-  padding: 56px 24px 32px;
+  padding: 56px var(--page-pad) 32px;
   border-bottom: 2px solid var(--black);
 }
 .eyebrow {
@@ -128,13 +129,30 @@ h1 {
   font-weight: 900;
 }
 .archive-section, .focus-section, .loop-section, .latest-section, .history-section, .category-section, .category-link-section, .recent-section {
-  padding: 30px 24px;
+  padding: 30px var(--page-pad);
   border-bottom: 1px solid var(--line);
 }
 .evidence-section {
-  padding: 24px 22px;
+  padding: 24px var(--page-pad);
   border-top: 1px solid var(--line);
   background: #fff;
+}
+.evidence-section summary {
+  cursor: pointer;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 900;
+  list-style: none;
+}
+.evidence-section summary::-webkit-details-marker { display: none; }
+.evidence-section summary::after {
+  content: "+";
+  float: right;
+  color: var(--muted);
+}
+.evidence-section[open] summary::after { content: "-"; }
+.evidence-section .evidence-grid {
+  margin-top: 14px;
 }
 h2 {
   margin: 0 0 8px;
@@ -560,6 +578,9 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   font-size: 14px;
   overflow-wrap: anywhere;
 }
+.focus-list p:last-child {
+  border-bottom: 0;
+}
 .focus-list span {
   display: block;
   min-width: 0;
@@ -599,7 +620,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
 .keyword-list {
   display: grid;
   gap: 10px;
-  padding: 16px;
+  padding: 18px var(--page-pad);
 }
 .keyword-card {
   border: 1px solid var(--line);
@@ -775,6 +796,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
 .site-footer p { margin: 0 0 8px; }
 
 @media (max-width: 760px) {
+  :root { --page-pad: 24px; }
   .site {
     max-width: none;
     margin: 0;
@@ -794,22 +816,23 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   }
   .report-layout { display: block; }
   .side-nav { display: none; }
-  .home-hero, .report-hero { padding: 36px 24px 30px; }
+  .home-hero, .report-hero { padding: 36px var(--page-pad) 30px; }
   .hero-copy {
-    max-width: min(320px, calc(100vw - 48px));
+    max-width: 100%;
     font-size: 15px;
     overflow-wrap: anywhere;
   }
   .focus-section, .keyword-list, .keyword-card { min-width: 0; }
   .focus-list p {
     display: block;
+    padding: 16px 0;
   }
   .focus-list b {
     display: block;
     margin-bottom: 8px;
   }
   .focus-list span {
-    max-width: min(320px, calc(100vw - 48px));
+    max-width: 100%;
   }
   .hero-meta, .report-meta { gap: 7px; }
   .hero-meta span, .report-meta span {
@@ -881,6 +904,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   .card-top {
     grid-template-columns: auto minmax(0, 1fr);
     gap: 10px;
+    padding: 16px;
   }
   .item-number {
     width: 38px;
@@ -893,4 +917,11 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     max-width: none;
   }
   .card-top h3 { font-size: 22px; }
+  .memo {
+    padding: 16px 16px 2px;
+    font-size: 15px;
+  }
+  .card-bottom {
+    margin: 14px 16px 16px;
+  }
 }
