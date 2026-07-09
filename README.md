@@ -1,26 +1,26 @@
-# Mmall Sourcing Radar
+# Mmall Signal Desk
 
-Static archive for Mmall MD teams to review Naver popularity signals by Day, category, and report date.
+M몰 MD가 네이버 인기검색어 신호를 Day, 카테고리, 기준일별로 확인하는 정적 아카이브입니다.
 
-## Contents
+## 구성
 
-- `index.html`: archive home with category filters, search, and latest category comparison
-- `day-*.html`: individual report pages
-- `manifest.json`: report index for generated pages
-- `styles.css`: Hyundai Card style UI layer for the static site
+- `index.html`: 카테고리 루프, 검색, 브리프 목록
+- `day-*.html`: Day별 상세 브리프
+- `manifest.json`: 생성 페이지 색인
+- `styles.css`: 정적 사이트 UI 스타일
 
-## Local Preview
+## 로컬 미리보기
 
 ```bash
 python3 -m http.server 8765
 ```
 
-Then open:
+브라우저에서 아래 주소를 엽니다.
 
 ```text
 http://127.0.0.1:8765/index.html
 ```
 
-## Data Note
+## 데이터 기준
 
-The site uses Naver DataLab Shopping Insight TOP rankings, Naver Shopping result surfaces, and Mmall mobile pre-login search exposure snapshots. DataLab and Shopping Insight values are normalized ratios, not absolute search volume.
+네이버 DataLab 쇼핑인사이트 TOP 랭킹, 네이버쇼핑 상위 노출 상품명, M몰 모바일 로그인 전 검색 노출을 기준으로 합니다. DataLab과 쇼핑인사이트 값은 정규화된 비율이며 절대 검색량이 아닙니다.

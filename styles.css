@@ -50,6 +50,16 @@ h1 {
   line-height: 1.03;
   font-weight: 900;
 }
+.report-hero h1 {
+  font-size: clamp(29px, 5vw, 52px);
+  overflow-wrap: anywhere;
+}
+.report-date {
+  margin: 10px 0 0;
+  color: var(--secondary);
+  font-size: 16px;
+  font-weight: 900;
+}
 .hero-copy {
   max-width: 720px;
   margin: 16px 0 0;
@@ -104,7 +114,7 @@ h1 {
   font-size: 12px;
   font-weight: 900;
 }
-.control-section, .compare-section, .archive-section, .focus-section {
+.control-section, .compare-section, .archive-section, .focus-section, .loop-section {
   padding: 24px 22px;
   border-bottom: 1px solid var(--line);
 }
@@ -118,10 +128,57 @@ h2 {
   font-size: 21px;
   line-height: 1.2;
 }
-.control-section p {
+.control-section p, .section-head p {
   margin: 0 0 18px;
   color: var(--secondary);
   font-size: 14px;
+}
+.section-head p {
+  max-width: 820px;
+}
+.loop-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(138px, 1fr);
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 0 8px;
+  scroll-snap-type: x mandatory;
+}
+.loop-item {
+  display: grid;
+  align-content: start;
+  min-height: 118px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  scroll-snap-align: start;
+}
+.loop-item span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+.loop-item strong {
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+.loop-item em {
+  margin-top: 8px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-style: normal;
+}
+.loop-item small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.loop-item.mismatch {
+  background: var(--warning-bg);
 }
 #archiveSearch {
   width: 100%;
@@ -465,7 +522,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
 
 @media (max-width: 760px) {
   .site {
-    max-width: 390px;
+    max-width: none;
     margin: 0;
     overflow-x: hidden;
   }
@@ -474,10 +531,20 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     line-height: 1.06;
     word-break: keep-all;
   }
+  .report-hero h1 {
+    font-size: 30px;
+    word-break: normal;
+  }
   .report-layout { display: block; }
   .side-nav { display: none; }
   .home-hero, .report-hero { padding-top: 30px; }
   .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .loop-strip {
+    grid-auto-columns: 142px;
+    margin-right: -22px;
+    padding-right: 22px;
+  }
+  .compare-section { display: none; }
   .archive-grid { grid-template-columns: 1fr; }
   .log-row { grid-template-columns: 1fr; gap: 3px; }
   .card-top { gap: 10px; }
