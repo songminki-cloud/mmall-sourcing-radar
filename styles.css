@@ -48,17 +48,17 @@ button, input { font: inherit; }
 }
 h1 {
   margin: 0;
-  font-size: clamp(42px, 7vw, 72px);
+  font-size: clamp(50px, 9vw, 88px);
   line-height: .98;
   font-weight: 900;
 }
 .mmall-logo {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #000;
-  font-size: clamp(54px, 13vw, 104px);
-  line-height: .78;
+  font-size: clamp(34px, 7vw, 54px);
+  line-height: .86;
   font-weight: 950;
   letter-spacing: 0;
   white-space: nowrap;
@@ -220,6 +220,7 @@ h2 {
 .latest-card h2 {
   margin: 0;
   min-width: 0;
+  width: 100%;
   max-width: 760px;
   font-size: clamp(28px, 5vw, 48px);
   line-height: 1.08;
@@ -227,6 +228,7 @@ h2 {
 }
 .latest-card p {
   min-width: 0;
+  width: 100%;
   max-width: 780px;
   margin: 0;
   color: rgba(255,255,255,.78);
@@ -270,7 +272,7 @@ h2 {
 }
 .recent-card {
   min-height: 0;
-  width: calc(100vw - 72px);
+  width: 100%;
   max-width: 100%;
   justify-self: stretch;
 }
@@ -832,12 +834,12 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     overflow-x: hidden;
   }
   h1 {
-    font-size: 44px;
+    font-size: 42px;
     line-height: .98;
     word-break: keep-all;
   }
   .mmall-logo {
-    font-size: 54px;
+    font-size: 30px;
   }
   .report-hero h1 {
     font-size: 30px;
@@ -847,7 +849,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   .side-nav { display: none; }
   .home-hero, .report-hero { padding: 36px var(--page-pad) 30px; }
   .hero-copy {
-    max-width: 100%;
+    max-width: calc(100vw - 48px);
     font-size: 15px;
     overflow-wrap: anywhere;
   }
@@ -890,17 +892,22 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     font-size: 26px;
     word-break: keep-all;
     overflow-wrap: anywhere;
+    max-width: calc(100vw - 86px);
   }
   .latest-card p {
     word-break: normal;
     overflow-wrap: anywhere;
+    max-width: calc(100vw - 86px);
+  }
+  .latest-keywords {
+    max-width: calc(100vw - 86px);
   }
   .recent-grid {
     grid-template-columns: 1fr;
   }
   .recent-card {
     min-height: 0;
-    width: calc(100vw - 72px);
+    width: 100%;
     max-width: 100%;
   }
   .archive-head {
