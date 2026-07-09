@@ -718,19 +718,18 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     padding: 11px;
   }
   .latest-card {
-    width: calc(100vw - 72px);
-    max-width: calc(100vw - 72px);
+    width: 100%;
+    max-width: 100%;
     padding: 19px;
   }
   .latest-card h2 {
     font-size: 26px;
-    word-break: break-all;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
   }
   .latest-card p {
-    word-break: keep-all;
-  }
-  .latest-section {
-    padding-right: 48px;
+    word-break: normal;
+    overflow-wrap: anywhere;
   }
   .category-grid {
     grid-template-columns: 1fr;
