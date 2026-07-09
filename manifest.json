@@ -1,0 +1,227 @@
+[
+  {
+    "day": 1,
+    "date": "2026-06-21",
+    "category": "디지털/가전",
+    "items": 3,
+    "rising": 0,
+    "zero_gap": 0,
+    "page": "day-01-2026-06-21-digital.html"
+  },
+  {
+    "day": 2,
+    "date": "2026-06-23",
+    "category": "스포츠/레저",
+    "items": 10,
+    "rising": 0,
+    "zero_gap": 1,
+    "page": "day-02-2026-06-23-sports.html"
+  },
+  {
+    "day": 2,
+    "date": "2026-06-23",
+    "category": "가구/인테리어",
+    "items": 10,
+    "rising": 7,
+    "zero_gap": 4,
+    "page": "day-02-2026-06-23-interior.html"
+  },
+  {
+    "day": 3,
+    "date": "2026-06-24",
+    "category": "가구/인테리어",
+    "items": 10,
+    "rising": 5,
+    "zero_gap": 4,
+    "page": "day-03-2026-06-24-interior.html"
+  },
+  {
+    "day": 4,
+    "date": "2026-06-25",
+    "category": "생활/건강",
+    "items": 10,
+    "rising": 1,
+    "zero_gap": 3,
+    "page": "day-04-2026-06-25-living.html"
+  },
+  {
+    "day": 5,
+    "date": "2026-06-26",
+    "category": "패션잡화",
+    "items": 10,
+    "rising": 0,
+    "zero_gap": 2,
+    "page": "day-05-2026-06-26-fashion-accessory-reissue.html"
+  },
+  {
+    "day": 5,
+    "date": "2026-06-26",
+    "category": "패션잡화",
+    "items": 7,
+    "rising": 0,
+    "zero_gap": 4,
+    "page": "day-05-2026-06-26-fashion-accessory.html"
+  },
+  {
+    "day": 6,
+    "date": "2026-06-27",
+    "category": "화장품/미용",
+    "items": 10,
+    "rising": 0,
+    "zero_gap": 5,
+    "page": "day-06-2026-06-27-beauty.html"
+  },
+  {
+    "day": 7,
+    "date": "2026-06-28",
+    "category": "식품",
+    "items": 7,
+    "rising": 1,
+    "zero_gap": 0,
+    "page": "day-07-2026-06-28-food.html"
+  },
+  {
+    "day": 8,
+    "date": "2026-06-29",
+    "category": "패션의류",
+    "items": 10,
+    "rising": 2,
+    "zero_gap": 1,
+    "page": "day-08-2026-06-29-fashion.html"
+  },
+  {
+    "day": 9,
+    "date": "2026-06-30",
+    "category": "출산/육아",
+    "items": 9,
+    "rising": 3,
+    "zero_gap": 1,
+    "page": "day-09-2026-06-30-kids.html"
+  },
+  {
+    "day": 10,
+    "date": "2026-07-01",
+    "category": "디지털/가전",
+    "items": 10,
+    "rising": 1,
+    "zero_gap": 0,
+    "page": "day-10-2026-07-01-digital.html"
+  },
+  {
+    "day": 10,
+    "date": "2026-07-01",
+    "category": "여가/생활편의",
+    "items": 0,
+    "rising": 0,
+    "zero_gap": 0,
+    "page": "day-10-2026-07-01-leisure.html"
+  },
+  {
+    "day": 11,
+    "date": "2026-07-02",
+    "category": "디지털/가전",
+    "items": 10,
+    "rising": 1,
+    "zero_gap": 0,
+    "page": "day-11-2026-07-02-digital.html"
+  },
+  {
+    "day": 11,
+    "date": "2026-07-02",
+    "category": "스포츠/레저",
+    "items": 10,
+    "rising": 2,
+    "zero_gap": 1,
+    "page": "day-11-2026-07-02-sports.html"
+  },
+  {
+    "day": 12,
+    "date": "2026-07-03",
+    "category": "가구/인테리어",
+    "items": 10,
+    "rising": 4,
+    "zero_gap": 3,
+    "page": "day-12-2026-07-03-interior.html"
+  },
+  {
+    "day": 13,
+    "date": "2026-07-04",
+    "category": "생활/건강",
+    "items": 10,
+    "rising": 1,
+    "zero_gap": 10,
+    "page": "day-13-2026-07-04-living.html"
+  },
+  {
+    "day": 14,
+    "date": "2026-07-05",
+    "category": "생활/건강",
+    "items": 10,
+    "rising": 2,
+    "zero_gap": 2,
+    "page": "day-14-2026-07-05-living.html"
+  },
+  {
+    "day": 14,
+    "date": "2026-07-05",
+    "category": "패션잡화",
+    "items": 7,
+    "rising": 2,
+    "zero_gap": 1,
+    "page": "day-14-2026-07-05-fashion-accessory.html"
+  },
+  {
+    "day": 14,
+    "date": "2026-07-05",
+    "category": "화장품/미용",
+    "items": 10,
+    "rising": 5,
+    "zero_gap": 5,
+    "page": "day-14-2026-07-05-beauty.html"
+  },
+  {
+    "day": 15,
+    "date": "2026-07-06",
+    "category": "화장품/미용",
+    "items": 10,
+    "rising": 4,
+    "zero_gap": 5,
+    "page": "day-15-2026-07-06-beauty.html"
+  },
+  {
+    "day": 16,
+    "date": "2026-07-07",
+    "category": "식품",
+    "items": 10,
+    "rising": 8,
+    "zero_gap": 3,
+    "page": "day-16-2026-07-07-food.html"
+  },
+  {
+    "day": 17,
+    "date": "2026-07-08",
+    "category": "식품",
+    "items": 10,
+    "rising": 5,
+    "zero_gap": 3,
+    "page": "day-17-2026-07-08-food.html"
+  },
+  {
+    "day": 17,
+    "date": "2026-07-08",
+    "category": "패션의류",
+    "items": 10,
+    "rising": 3,
+    "zero_gap": 2,
+    "page": "day-17-2026-07-08-fashion.html"
+  },
+  {
+    "day": 18,
+    "date": "2026-07-09",
+    "category": "출산/육아",
+    "items": 10,
+    "rising": 6,
+    "zero_gap": 3,
+    "page": "day-18-2026-07-09-kids.html"
+  }
+]
