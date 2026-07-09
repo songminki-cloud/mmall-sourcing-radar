@@ -561,14 +561,20 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   .side-nav { display: none; }
   .home-hero, .report-hero { padding: 36px 24px 30px; }
   .hero-copy {
-    max-width: calc(100vw - 48px);
+    max-width: min(320px, calc(100vw - 48px));
     font-size: 15px;
     overflow-wrap: anywhere;
   }
   .focus-section, .keyword-list, .keyword-card { min-width: 0; }
   .focus-list p {
-    grid-template-columns: 28px minmax(0, calc(100vw - 84px));
-    gap: 8px;
+    display: block;
+  }
+  .focus-list b {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .focus-list span {
+    max-width: min(320px, calc(100vw - 48px));
   }
   .hero-meta, .report-meta { gap: 7px; }
   .hero-meta span, .report-meta span {
