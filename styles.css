@@ -52,26 +52,15 @@ h1 {
   font-weight: 900;
 }
 .mmall-logo {
-  display: inline-grid;
-  justify-items: center;
-  gap: 8px;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 20px;
   color: #000;
-}
-.mmall-logo-m {
-  display: block;
-  font-size: 68px;
+  font-size: clamp(54px, 13vw, 104px);
   line-height: .78;
   font-weight: 950;
   letter-spacing: 0;
-}
-.mmall-logo-arc {
-  display: block;
-  width: 58px;
-  height: 17px;
-  border: 6px solid #000;
-  border-bottom: 0;
-  border-radius: 16px 16px 0 0;
+  white-space: nowrap;
 }
 .report-hero h1 {
   font-size: clamp(29px, 5vw, 52px);
@@ -796,14 +785,8 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     line-height: .98;
     word-break: keep-all;
   }
-  .mmall-logo-m {
-    font-size: 58px;
-  }
-  .mmall-logo-arc {
-    width: 49px;
-    height: 15px;
-    border-width: 5px;
-    border-bottom: 0;
+  .mmall-logo {
+    font-size: 54px;
   }
   .report-hero h1 {
     font-size: 30px;
