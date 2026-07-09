@@ -673,33 +673,43 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   color: var(--secondary);
 }
 .card-top {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  align-items: baseline;
-  column-gap: 14px;
-  padding: 20px 20px 17px;
+  display: block;
+  padding: 19px 20px 16px;
   border-bottom: 1px solid #000;
 }
 .item-number {
   display: inline-flex;
-  width: 34px;
+  width: auto;
   align-items: center;
   justify-content: center;
-  color: var(--muted);
-  font-size: 15px;
+  color: var(--text);
+  font-size: 13px;
   line-height: 1;
   font-weight: 950;
   letter-spacing: 0;
+  margin-right: 9px;
+  transform: translateY(-1px);
 }
 .card-title-block {
   min-width: 0;
   display: grid;
-  gap: 7px;
+  gap: 10px;
+}
+.card-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
 }
 .item-kicker {
-  margin-top: 1px;
+  margin: 0;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 850;
 }
 .card-top h3 {
+  display: flex;
+  align-items: baseline;
   margin: 0;
   font-size: 28px;
   line-height: 1.08;
@@ -710,9 +720,9 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 7px;
+  gap: 6px;
   max-width: none;
-  padding-top: 1px;
+  padding-top: 0;
 }
 .market-link {
   display: inline-flex;
@@ -953,17 +963,16 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   }
   .log-row { grid-template-columns: 1fr; gap: 3px; }
   .card-top {
-    grid-template-columns: 31px minmax(0, 1fr);
-    column-gap: 12px;
     padding: 19px 18px 16px;
   }
   .item-number {
-    width: 31px;
-    font-size: 14px;
+    font-size: 13px;
+    margin-right: 8px;
   }
+  .card-meta-row { gap: 6px 10px; }
   .card-actions {
     justify-content: flex-start;
-    gap: 7px;
+    gap: 6px;
     max-width: none;
   }
   .card-top h3 { font-size: 25px; }
