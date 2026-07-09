@@ -644,30 +644,28 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
 }
 .card-top {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
   align-items: start;
-  gap: 12px;
-  padding: 18px;
-  border-bottom: 2px solid #000;
+  column-gap: 14px;
+  row-gap: 8px;
+  padding: 18px 18px 16px;
+  border-bottom: 1px solid #000;
 }
 .item-number {
-  display: inline-grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border: 2px solid #000;
-  background: #000;
-  color: #fff;
-  font-size: 15px;
+  display: block;
+  padding-top: 2px;
+  border-top: 2px solid #000;
+  color: var(--muted);
+  font-size: 13px;
   line-height: 1;
-  font-weight: 950;
+  font-weight: 900;
 }
 .card-title-block {
   min-width: 0;
 }
 .card-top h3 {
-  margin: 8px 0 0;
-  font-size: 25px;
+  margin: 5px 0 0;
+  font-size: 28px;
   line-height: 1.15;
   font-weight: 900;
   word-break: keep-all;
@@ -676,31 +674,24 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 6px;
-  max-width: 190px;
+  gap: 10px;
+  max-width: 120px;
+  padding-top: 2px;
 }
-.trend {
-  display: inline-flex;
-  padding: 6px 9px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 900;
-}
-.trend.up { background: var(--up-bg); color: var(--up); }
-.trend.down { background: var(--down-bg); color: var(--down); }
-.trend.flat { background: var(--flat-bg); color: var(--secondary); }
 .market-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 31px;
-  padding: 0 10px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--text);
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--secondary);
   font-size: 12px;
   font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .memo {
   margin: 0;
@@ -902,21 +893,21 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   }
   .log-row { grid-template-columns: 1fr; gap: 3px; }
   .card-top {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    row-gap: 6px;
     padding: 16px;
   }
   .item-number {
-    width: 38px;
-    height: 38px;
     font-size: 14px;
   }
   .card-actions {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-    max-width: none;
+    grid-column: auto;
+    justify-content: flex-end;
+    gap: 8px;
+    max-width: 78px;
   }
-  .card-top h3 { font-size: 22px; }
+  .card-top h3 { font-size: 24px; }
   .memo {
     padding: 16px 16px 2px;
     font-size: 15px;
