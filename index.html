@@ -10,48 +10,37 @@
   <main class="site">
     
         <header class="home-hero">
-          <div class="mmall-brand" aria-label="M몰">
-            <span class="mmall-mark">M</span>
-            <span class="mmall-word">MALL</span>
+          <div class="mmall-logo" aria-label="M몰">
+            <span class="mmall-logo-m">M</span>
+            <span class="mmall-logo-arc" aria-hidden="true"></span>
           </div>
           <h1>Mmall<br>Signal Desk</h1>
           <p class="hero-copy">네이버 DataLab 상위 인기검색어와 향후 2~4주 흐름을 함께 보며, M몰 MD가 바로 확인할 키워드와 상품 맥락만 정리합니다.</p>
         </header>
-        <section class="latest-section">
-          
-      <a class="latest-card" href="day-18-2026-07-09-kids.html">
-        <span class="latest-kicker">최신 리포트 · 2026-07-09</span>
-        <h2>Day 18 · 출산/육아</h2>
-        <p>출산/육아 수요는 안전 장비, 외출 준비물, 물놀이 시즌 상품이 동시에 움직입니다. 부모 구매는 예쁜 이미지보다 안전성, 사이즈 실패 가능성, 배송 약속을 먼저 봅니다.</p>
-        <div class="latest-keywords"><span>아기침대</span><span>아기띠</span><span>포켓몬카드</span><span>키즈래쉬가드</span><span>여아래쉬가드</span></div>
-        <strong>리포트 바로 보기</strong>
-      </a>
-    
-        </section>
         <section class="recent-section">
           <div class="section-head">
-            <h2>최근 리포트</h2>
-            <p>최근 발행 3개만 먼저 확인합니다.</p>
+            <h2>최신 리포트</h2>
+            <p>최근 3개 회차를 같은 형식으로 봅니다.</p>
           </div>
           <div class="recent-grid">
             
-            <a class="recent-card" href="day-18-2026-07-09-kids.html">
-              <span>Day 18 · 2026-07-09</span>
-              <strong>출산/육아</strong>
+            <a class="recent-card featured" href="day-18-2026-07-09-kids.html" aria-label="Day 18 출산/육아 리포트 열기">
+              <span class="recent-meta">Day 18 · 2026-07-09 <i class="card-arrow" aria-hidden="true">&gt;</i></span>
+              <strong>Day 18 · 출산/육아</strong>
               <em>아기침대, 아기띠, 포켓몬카드, 키즈래쉬가드</em>
             </a>
             
 
-            <a class="recent-card" href="day-17-2026-07-08-fashion.html">
-              <span>Day 17 · 2026-07-08</span>
-              <strong>패션의류</strong>
+            <a class="recent-card plain" href="day-17-2026-07-08-fashion.html" aria-label="Day 17 패션의류 리포트 열기">
+              <span class="recent-meta">Day 17 · 2026-07-08 <i class="card-arrow" aria-hidden="true">&gt;</i></span>
+              <strong>Day 17 · 패션의류</strong>
               <em>여름가디건, 여름블라우스, 플리츠원피스, 쉬즈미스원피스</em>
             </a>
             
 
-            <a class="recent-card" href="day-16-2026-07-07-food.html">
-              <span>Day 16 · 2026-07-07</span>
-              <strong>식품</strong>
+            <a class="recent-card plain" href="day-16-2026-07-07-food.html" aria-label="Day 16 식품 리포트 열기">
+              <span class="recent-meta">Day 16 · 2026-07-07 <i class="card-arrow" aria-hidden="true">&gt;</i></span>
+              <strong>Day 16 · 식품</strong>
               <em>복숭아, 카무트효소, 멸균우유, 조선호텔김치</em>
             </a>
             
@@ -61,7 +50,7 @@
           <div class="archive-head">
             <div>
               <h2>모든 리포트 보기</h2>
-              <p>Day, 날짜, 카테고리, 키워드로 찾고 정렬합니다.</p>
+              <p>카테고리를 고르거나 키워드로 찾습니다.</p>
             </div>
             <strong id="archiveCount">18개</strong>
           </div>
@@ -70,13 +59,19 @@
               <span>검색</span>
               <input id="archiveSearch" type="search" placeholder="키워드, 카테고리, Day 검색" autocomplete="off">
             </label>
-            <label class="sort-box">
-              <span>정렬</span>
-              <select id="archiveSort">
-                <option value="latest">최신순</option>
-                <option value="oldest">오래된순</option>
-                <option value="day-desc">Day 높은순</option>
-                <option value="category">카테고리순</option>
+            <label class="category-filter-box">
+              <span>카테고리</span>
+              <select id="archiveCategory">
+                <option value="">전체</option>
+                <option value="디지털/가전">디지털/가전</option>
+<option value="스포츠/레저">스포츠/레저</option>
+<option value="가구/인테리어">가구/인테리어</option>
+<option value="생활/건강">생활/건강</option>
+<option value="패션잡화">패션잡화</option>
+<option value="화장품/미용">화장품/미용</option>
+<option value="식품">식품</option>
+<option value="패션의류">패션의류</option>
+<option value="출산/육아">출산/육아</option>
               </select>
             </label>
           </div>
@@ -233,25 +228,13 @@
             const grid = document.querySelector("#archiveGrid");
             const cards = Array.from(grid.querySelectorAll(".archive-card"));
             const search = document.querySelector("#archiveSearch");
-            const sort = document.querySelector("#archiveSort");
+            const category = document.querySelector("#archiveCategory");
             const count = document.querySelector("#archiveCount");
             const empty = document.querySelector("#archiveEmpty");
 
-            function sortCards(list) {
-              const mode = sort.value;
-              return list.sort((a, b) => {
-                if (mode === "oldest") return Number(a.dataset.day) - Number(b.dataset.day);
-                if (mode === "day-desc") return Number(b.dataset.day) - Number(a.dataset.day);
-                if (mode === "category") {
-                  const byCategory = a.dataset.category.localeCompare(b.dataset.category, "ko");
-                  return byCategory || Number(b.dataset.day) - Number(a.dataset.day);
-                }
-                return Number(b.dataset.day) - Number(a.dataset.day);
-              });
-            }
-
             function applyArchiveFilters() {
               const query = search.value.trim().toLowerCase();
+              const selectedCategory = category.value;
               const visible = cards.filter((card) => {
                 const haystack = [
                   `day ${card.dataset.day}`,
@@ -260,9 +243,11 @@
                   card.dataset.category,
                   card.dataset.keywords
                 ].join(" ").toLowerCase();
-                return !query || haystack.includes(query);
+                const matchQuery = !query || haystack.includes(query);
+                const matchCategory = !selectedCategory || card.dataset.category === selectedCategory;
+                return matchQuery && matchCategory;
               });
-              sortCards(visible).forEach((card) => grid.appendChild(card));
+              visible.sort((a, b) => Number(b.dataset.day) - Number(a.dataset.day)).forEach((card) => grid.appendChild(card));
               cards.forEach((card) => {
                 card.hidden = !visible.includes(card);
               });
@@ -271,7 +256,7 @@
             }
 
             search.addEventListener("input", applyArchiveFilters);
-            sort.addEventListener("change", applyArchiveFilters);
+            category.addEventListener("change", applyArchiveFilters);
             applyArchiveFilters();
           })();
         </script>

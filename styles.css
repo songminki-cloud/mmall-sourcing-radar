@@ -51,29 +51,27 @@ h1 {
   line-height: .98;
   font-weight: 900;
 }
-.mmall-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
+.mmall-logo {
+  display: inline-grid;
+  justify-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
   color: #000;
 }
-.mmall-mark {
-  display: inline-grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  border: 3px solid #000;
-  border-radius: 50%;
-  font-size: 26px;
-  line-height: 1;
-  font-weight: 950;
-}
-.mmall-word {
-  font-size: 22px;
-  line-height: 1;
+.mmall-logo-m {
+  display: block;
+  font-size: 68px;
+  line-height: .78;
   font-weight: 950;
   letter-spacing: 0;
+}
+.mmall-logo-arc {
+  display: block;
+  width: 58px;
+  height: 17px;
+  border: 6px solid #000;
+  border-bottom: 0;
+  border-radius: 16px 16px 0 0;
 }
 .report-hero h1 {
   font-size: clamp(29px, 5vw, 52px);
@@ -236,6 +234,7 @@ h2 {
   gap: 10px;
 }
 .recent-card {
+  position: relative;
   display: grid;
   align-content: start;
   gap: 8px;
@@ -245,10 +244,23 @@ h2 {
   border-radius: 8px;
   background: #fff;
 }
+.recent-card.featured {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+.recent-card.plain {
+  border-color: #000;
+  background: #fff;
+  color: #000;
+}
 .recent-card span {
   color: var(--muted);
   font-size: 12px;
   font-weight: 900;
+}
+.recent-card.featured span {
+  color: rgba(255,255,255,.66);
 }
 .recent-card strong {
   font-size: 20px;
@@ -258,6 +270,31 @@ h2 {
   color: var(--secondary);
   font-size: 13px;
   font-style: normal;
+  padding-right: 18px;
+}
+.recent-card.featured em {
+  color: rgba(255,255,255,.76);
+}
+.recent-card small {
+  margin-top: 4px;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  opacity: .7;
+}
+.recent-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 2px;
+}
+.card-arrow {
+  color: inherit;
+  font-size: 18px;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 900;
+  opacity: .72;
 }
 .order-grid {
   display: grid;
@@ -460,18 +497,18 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   margin-bottom: 14px;
 }
 .search-box,
-.sort-box {
+.category-filter-box {
   display: grid;
   gap: 6px;
 }
 .search-box span,
-.sort-box span {
+.category-filter-box span {
   color: var(--muted);
   font-size: 11px;
   font-weight: 900;
 }
 .search-box input,
-.sort-box select {
+.category-filter-box select {
   width: 100%;
   height: 46px;
   padding: 0 13px;
@@ -787,13 +824,14 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     line-height: .98;
     word-break: keep-all;
   }
-  .mmall-mark {
-    width: 42px;
-    height: 42px;
-    font-size: 23px;
+  .mmall-logo-m {
+    font-size: 58px;
   }
-  .mmall-word {
-    font-size: 20px;
+  .mmall-logo-arc {
+    width: 49px;
+    height: 15px;
+    border-width: 5px;
+    border-bottom: 0;
   }
   .report-hero h1 {
     font-size: 30px;
