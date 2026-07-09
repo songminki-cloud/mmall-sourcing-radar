@@ -116,7 +116,7 @@ h1 {
   font-size: 12px;
   font-weight: 900;
 }
-.archive-section, .focus-section, .loop-section, .latest-section, .history-section, .category-section {
+.archive-section, .focus-section, .loop-section, .latest-section, .history-section, .category-section, .category-link-section {
   padding: 30px 24px;
   border-bottom: 1px solid var(--line);
 }
@@ -318,6 +318,34 @@ th {
   font-weight: 900;
 }
 td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
+.category-button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.category-button {
+  display: grid;
+  gap: 6px;
+  min-height: 96px;
+  align-content: space-between;
+  padding: 16px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background: #fff;
+}
+.category-button span {
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 900;
+  word-break: keep-all;
+}
+.category-button strong,
+.category-button em {
+  color: var(--secondary);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+}
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -706,6 +734,16 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   }
   .category-grid {
     grid-template-columns: 1fr;
+  }
+  .category-button-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .category-button {
+    min-height: 86px;
+    padding: 13px;
+  }
+  .category-button span {
+    font-size: 15px;
   }
   .archive-grid { grid-template-columns: 1fr; }
   .archive-card {
