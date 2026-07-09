@@ -154,6 +154,34 @@ h1 {
 .evidence-section .evidence-grid {
   margin-top: 14px;
 }
+.basis-list {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 18px;
+  padding: 0;
+  list-style: none;
+  color: var(--secondary);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.basis-list li {
+  display: grid;
+  gap: 3px;
+}
+.basis-list b {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 900;
+}
+.basis-list span {
+  display: block;
+}
+.evidence-caption {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+}
 h2 {
   margin: 0 0 8px;
   font-size: 24px;
