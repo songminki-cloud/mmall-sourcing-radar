@@ -5,8 +5,19 @@
     "category": "디지털/가전",
     "items": 3,
     "rising": 0,
-    "zero_gap": 0,
-    "page": "day-01-2026-06-21-digital.html"
+    "page": "day-01-2026-06-21-digital.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-06-21.html",
+      "evidence/daily_radar_2026-06-21.html",
+      "evidence/future_demand_gap_radar_2026-06-21.html",
+      "evidence/yoy_leading_radar_2026-06-21.html",
+      "evidence/mmall_gap_review_2026-06-21.html",
+      "evidence/mmall_search_gap_review_2026-06-21.html",
+      "evidence/stage1_top200_sourcing_디지털_가전_2026-06-21.html",
+      "evidence/stage1_timesfm_rising_watch_디지털_가전_2026-06-21.html",
+      "evidence/curated_stage1_datalab_curated_디지털_가전_2026-06-21.html",
+      "evidence/curated_stage1_datalab_rank_디지털_가전_2026-06-21.html"
+    ]
   },
   {
     "day": 2,
@@ -14,8 +25,13 @@
     "category": "스포츠/레저",
     "items": 10,
     "rising": 0,
-    "zero_gap": 1,
-    "page": "day-02-2026-06-23-sports.html"
+    "page": "day-02-2026-06-23-sports.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_스포츠_레저_2026-06-22.html",
+      "evidence/curated_stage1_sourcing_gate_가구_인테리어_2026-06-23.html",
+      "evidence/daily_radar_2026-06-23.html",
+      "evidence/yoy_leading_radar_2026-06-23.html"
+    ]
   },
   {
     "day": 2,
@@ -23,8 +39,13 @@
     "category": "가구/인테리어",
     "items": 10,
     "rising": 7,
-    "zero_gap": 4,
-    "page": "day-02-2026-06-23-interior.html"
+    "page": "day-02-2026-06-23-interior.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_가구_인테리어_2026-06-22.html",
+      "evidence/curated_stage1_sourcing_gate_가구_인테리어_2026-06-23.html",
+      "evidence/daily_radar_2026-06-23.html",
+      "evidence/yoy_leading_radar_2026-06-23.html"
+    ]
   },
   {
     "day": 3,
@@ -32,8 +53,14 @@
     "category": "가구/인테리어",
     "items": 10,
     "rising": 5,
-    "zero_gap": 4,
-    "page": "day-03-2026-06-24-interior.html"
+    "page": "day-03-2026-06-24-interior.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_가구_인테리어_2026-06-23.html",
+      "evidence/curated_stage1_sourcing_gate_생활_건강_2026-06-24.html",
+      "evidence/daily_radar_2026-06-24.html",
+      "evidence/yoy_leading_radar_2026-06-24.html",
+      "evidence/curated_stage1_datalab_curated_생활_건강_2026-06-24.html"
+    ]
   },
   {
     "day": 4,
@@ -41,8 +68,14 @@
     "category": "생활/건강",
     "items": 10,
     "rising": 1,
-    "zero_gap": 3,
-    "page": "day-04-2026-06-25-living.html"
+    "page": "day-04-2026-06-25-living.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_생활_건강_2026-06-24.html",
+      "evidence/curated_stage1_sourcing_gate_패션잡화_2026-06-25_reissue.html",
+      "evidence/curated_stage1_sourcing_gate_패션잡화_2026-06-25.html",
+      "evidence/daily_radar_2026-06-25.html",
+      "evidence/yoy_leading_radar_2026-06-25.html"
+    ]
   },
   {
     "day": 5,
@@ -50,8 +83,13 @@
     "category": "패션잡화",
     "items": 10,
     "rising": 0,
-    "zero_gap": 2,
-    "page": "day-05-2026-06-26-fashion-accessory-reissue.html"
+    "page": "day-05-2026-06-26-fashion-accessory-reissue.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_패션잡화_2026-06-25_reissue.html",
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-06-26.html",
+      "evidence/daily_radar_2026-06-26.html",
+      "evidence/yoy_leading_radar_2026-06-26.html"
+    ]
   },
   {
     "day": 5,
@@ -59,8 +97,13 @@
     "category": "패션잡화",
     "items": 7,
     "rising": 0,
-    "zero_gap": 4,
-    "page": "day-05-2026-06-26-fashion-accessory.html"
+    "page": "day-05-2026-06-26-fashion-accessory.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_패션잡화_2026-06-25.html",
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-06-26.html",
+      "evidence/daily_radar_2026-06-26.html",
+      "evidence/yoy_leading_radar_2026-06-26.html"
+    ]
   },
   {
     "day": 6,
@@ -68,8 +111,13 @@
     "category": "화장품/미용",
     "items": 10,
     "rising": 0,
-    "zero_gap": 5,
-    "page": "day-06-2026-06-27-beauty.html"
+    "page": "day-06-2026-06-27-beauty.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-06-26.html",
+      "evidence/curated_stage1_sourcing_gate_식품_2026-06-27.html",
+      "evidence/daily_radar_2026-06-27.html",
+      "evidence/yoy_leading_radar_2026-06-27.html"
+    ]
   },
   {
     "day": 7,
@@ -77,8 +125,13 @@
     "category": "식품",
     "items": 7,
     "rising": 1,
-    "zero_gap": 0,
-    "page": "day-07-2026-06-28-food.html"
+    "page": "day-07-2026-06-28-food.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_식품_2026-06-27.html",
+      "evidence/curated_stage1_sourcing_gate_패션의류_2026-06-28.html",
+      "evidence/daily_radar_2026-06-28.html",
+      "evidence/yoy_leading_radar_2026-06-28.html"
+    ]
   },
   {
     "day": 8,
@@ -86,8 +139,13 @@
     "category": "패션의류",
     "items": 10,
     "rising": 2,
-    "zero_gap": 1,
-    "page": "day-08-2026-06-29-fashion.html"
+    "page": "day-08-2026-06-29-fashion.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_패션의류_2026-06-28.html",
+      "evidence/curated_stage1_sourcing_gate_출산_육아_2026-06-29.html",
+      "evidence/daily_radar_2026-06-29.html",
+      "evidence/yoy_leading_radar_2026-06-29.html"
+    ]
   },
   {
     "day": 9,
@@ -95,8 +153,14 @@
     "category": "출산/육아",
     "items": 9,
     "rising": 3,
-    "zero_gap": 1,
-    "page": "day-09-2026-06-30-kids.html"
+    "page": "day-09-2026-06-30-kids.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_출산_육아_2026-06-29.html",
+      "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-06-30.html",
+      "evidence/curated_stage1_sourcing_gate_여가_생활편의_2026-06-30.html",
+      "evidence/daily_radar_2026-06-30.html",
+      "evidence/yoy_leading_radar_2026-06-30.html"
+    ]
   },
   {
     "day": 10,
@@ -104,8 +168,14 @@
     "category": "디지털/가전",
     "items": 10,
     "rising": 1,
-    "zero_gap": 0,
-    "page": "day-10-2026-07-01-digital.html"
+    "page": "day-10-2026-07-01-digital.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-06-30.html",
+      "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-07-01.html",
+      "evidence/curated_stage1_sourcing_gate_스포츠_레저_2026-07-01.html",
+      "evidence/daily_radar_2026-07-01.html",
+      "evidence/yoy_leading_radar_2026-07-01.html"
+    ]
   },
   {
     "day": 10,
@@ -113,8 +183,14 @@
     "category": "여가/생활편의",
     "items": 0,
     "rising": 0,
-    "zero_gap": 0,
-    "page": "day-10-2026-07-01-leisure.html"
+    "page": "day-10-2026-07-01-leisure.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_여가_생활편의_2026-06-30.html",
+      "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-07-01.html",
+      "evidence/curated_stage1_sourcing_gate_스포츠_레저_2026-07-01.html",
+      "evidence/daily_radar_2026-07-01.html",
+      "evidence/yoy_leading_radar_2026-07-01.html"
+    ]
   },
   {
     "day": 11,
@@ -122,8 +198,13 @@
     "category": "디지털/가전",
     "items": 10,
     "rising": 1,
-    "zero_gap": 0,
-    "page": "day-11-2026-07-02-digital.html"
+    "page": "day-11-2026-07-02-digital.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-07-01.html",
+      "evidence/curated_stage1_sourcing_gate_가구_인테리어_2026-07-02.html",
+      "evidence/daily_radar_2026-07-02.html",
+      "evidence/yoy_leading_radar_2026-07-02.html"
+    ]
   },
   {
     "day": 11,
@@ -131,8 +212,13 @@
     "category": "스포츠/레저",
     "items": 10,
     "rising": 2,
-    "zero_gap": 1,
-    "page": "day-11-2026-07-02-sports.html"
+    "page": "day-11-2026-07-02-sports.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_스포츠_레저_2026-07-01.html",
+      "evidence/curated_stage1_sourcing_gate_가구_인테리어_2026-07-02.html",
+      "evidence/daily_radar_2026-07-02.html",
+      "evidence/yoy_leading_radar_2026-07-02.html"
+    ]
   },
   {
     "day": 12,
@@ -140,8 +226,13 @@
     "category": "가구/인테리어",
     "items": 10,
     "rising": 4,
-    "zero_gap": 3,
-    "page": "day-12-2026-07-03-interior.html"
+    "page": "day-12-2026-07-03-interior.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_가구_인테리어_2026-07-02.html",
+      "evidence/curated_stage1_sourcing_gate_생활_건강_2026-07-03.html",
+      "evidence/daily_radar_2026-07-03.html",
+      "evidence/yoy_leading_radar_2026-07-03.html"
+    ]
   },
   {
     "day": 13,
@@ -149,8 +240,15 @@
     "category": "생활/건강",
     "items": 10,
     "rising": 1,
-    "zero_gap": 10,
-    "page": "day-13-2026-07-04-living.html"
+    "page": "day-13-2026-07-04-living.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_생활_건강_2026-07-03.html",
+      "evidence/curated_stage1_sourcing_gate_생활_건강_2026-07-04.html",
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-07-04.html",
+      "evidence/curated_stage1_sourcing_gate_패션잡화_2026-07-04.html",
+      "evidence/daily_radar_2026-07-04.html",
+      "evidence/yoy_leading_radar_2026-07-04.html"
+    ]
   },
   {
     "day": 14,
@@ -158,8 +256,14 @@
     "category": "생활/건강",
     "items": 10,
     "rising": 2,
-    "zero_gap": 2,
-    "page": "day-14-2026-07-05-living.html"
+    "page": "day-14-2026-07-05-living.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_생활_건강_2026-07-04.html",
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-07-05.html",
+      "evidence/curated_stage1_sourcing_gate_식품_2026-07-05.html",
+      "evidence/daily_radar_2026-07-05.html",
+      "evidence/yoy_leading_radar_2026-07-05.html"
+    ]
   },
   {
     "day": 14,
@@ -167,8 +271,14 @@
     "category": "패션잡화",
     "items": 7,
     "rising": 2,
-    "zero_gap": 1,
-    "page": "day-14-2026-07-05-fashion-accessory.html"
+    "page": "day-14-2026-07-05-fashion-accessory.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_패션잡화_2026-07-04.html",
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-07-05.html",
+      "evidence/curated_stage1_sourcing_gate_식품_2026-07-05.html",
+      "evidence/daily_radar_2026-07-05.html",
+      "evidence/yoy_leading_radar_2026-07-05.html"
+    ]
   },
   {
     "day": 14,
@@ -176,8 +286,14 @@
     "category": "화장품/미용",
     "items": 10,
     "rising": 5,
-    "zero_gap": 5,
-    "page": "day-14-2026-07-05-beauty.html"
+    "page": "day-14-2026-07-05-beauty.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-07-04.html",
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-07-05.html",
+      "evidence/curated_stage1_sourcing_gate_식품_2026-07-05.html",
+      "evidence/daily_radar_2026-07-05.html",
+      "evidence/yoy_leading_radar_2026-07-05.html"
+    ]
   },
   {
     "day": 15,
@@ -185,8 +301,13 @@
     "category": "화장품/미용",
     "items": 10,
     "rising": 4,
-    "zero_gap": 5,
-    "page": "day-15-2026-07-06-beauty.html"
+    "page": "day-15-2026-07-06-beauty.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-07-05.html",
+      "evidence/curated_stage1_sourcing_gate_식품_2026-07-06.html",
+      "evidence/daily_radar_2026-07-06.html",
+      "evidence/yoy_leading_radar_2026-07-06.html"
+    ]
   },
   {
     "day": 16,
@@ -194,8 +315,13 @@
     "category": "식품",
     "items": 10,
     "rising": 8,
-    "zero_gap": 3,
-    "page": "day-16-2026-07-07-food.html"
+    "page": "day-16-2026-07-07-food.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_식품_2026-07-05.html",
+      "evidence/curated_stage1_sourcing_gate_패션의류_2026-07-07.html",
+      "evidence/daily_radar_2026-07-07.html",
+      "evidence/yoy_leading_radar_2026-07-07.html"
+    ]
   },
   {
     "day": 17,
@@ -203,8 +329,13 @@
     "category": "식품",
     "items": 10,
     "rising": 5,
-    "zero_gap": 3,
-    "page": "day-17-2026-07-08-food.html"
+    "page": "day-17-2026-07-08-food.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_식품_2026-07-06.html",
+      "evidence/curated_stage1_sourcing_gate_출산_육아_2026-07-08.html",
+      "evidence/daily_radar_2026-07-08.html",
+      "evidence/yoy_leading_radar_2026-07-08.html"
+    ]
   },
   {
     "day": 17,
@@ -212,8 +343,13 @@
     "category": "패션의류",
     "items": 10,
     "rising": 3,
-    "zero_gap": 2,
-    "page": "day-17-2026-07-08-fashion.html"
+    "page": "day-17-2026-07-08-fashion.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_패션의류_2026-07-07.html",
+      "evidence/curated_stage1_sourcing_gate_출산_육아_2026-07-08.html",
+      "evidence/daily_radar_2026-07-08.html",
+      "evidence/yoy_leading_radar_2026-07-08.html"
+    ]
   },
   {
     "day": 18,
@@ -221,7 +357,9 @@
     "category": "출산/육아",
     "items": 10,
     "rising": 6,
-    "zero_gap": 3,
-    "page": "day-18-2026-07-09-kids.html"
+    "page": "day-18-2026-07-09-kids.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_출산_육아_2026-07-08.html"
+    ]
   }
 ]
