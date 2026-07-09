@@ -597,9 +597,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   border-top: 2px solid var(--black);
 }
 .focus-list p {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 12px;
+  display: block;
   margin: 0;
   padding: 15px 0;
   background: #fff;
@@ -617,9 +615,6 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   max-width: 100%;
   overflow-wrap: anywhere;
   word-break: normal;
-}
-.focus-list b {
-  color: var(--text);
 }
 .report-layout {
   display: grid;
