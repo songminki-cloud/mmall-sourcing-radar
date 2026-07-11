@@ -21,6 +21,7 @@
 html {
   width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -221,6 +222,18 @@ h2 {
   color: #fff;
   overflow: hidden;
 }
+.latest-card-main {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  border-radius: 4px;
+}
+.latest-card-main:focus-visible,
+.latest-keywords a:focus-visible,
+.market-link:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
 .latest-kicker {
   color: rgba(255,255,255,.72);
   font-size: 12px;
@@ -252,16 +265,34 @@ h2 {
   min-width: 0;
   overflow: visible;
 }
-.latest-keywords span {
+.latest-keywords a {
   display: inline-flex;
-  min-height: 31px;
+  flex: 0 0 auto;
+  min-height: 38px;
   align-items: center;
-  padding: 0 10px;
+  gap: 7px;
+  padding: 0 12px;
   border: 1px solid rgba(255,255,255,.28);
   border-radius: 999px;
   color: rgba(255,255,255,.86);
   font-size: 12px;
   font-weight: 900;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color .16s ease, border-color .16s ease, transform .16s ease;
+}
+.latest-keywords a::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+}
+.latest-keywords a:hover {
+  border-color: currentColor;
+  background: rgba(255,255,255,.12);
+  transform: translateY(-1px);
 }
 .recent-grid {
   display: grid;
@@ -291,10 +322,14 @@ h2 {
 .recent-card.plain p {
   color: var(--secondary);
 }
-.recent-card.plain .latest-keywords span {
+.recent-card.plain .latest-keywords a {
   border-color: var(--line);
   color: #222;
   background: #f7f7f7;
+}
+.recent-card.plain .latest-keywords a:hover {
+  border-color: #000;
+  background: #fff;
 }
 .order-grid {
   display: grid;
@@ -650,6 +685,12 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   border-radius: 8px;
   background: #fff;
   overflow: hidden;
+  scroll-margin-top: 18px;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.keyword-card:target {
+  border-color: #000;
+  box-shadow: 0 0 0 3px #000;
 }
 .empty-card {
   padding: 20px;
@@ -705,7 +746,10 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   line-height: 1.25;
   white-space: nowrap;
   justify-self: end;
-  padding-top: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--soft);
 }
 .card-top h3 {
   display: flex;
@@ -723,53 +767,58 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   overflow-wrap: anywhere;
 }
 .card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 6px;
-  max-width: none;
-  padding-left: 39px;
-  padding-top: 1px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0 18px 18px;
 }
 .market-link {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  min-height: auto;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: var(--secondary);
-  font-size: 12px;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1.5px solid #000;
+  border-radius: 6px;
+  font-size: 13px;
   font-weight: 900;
   text-decoration: none;
-  white-space: nowrap;
+  cursor: pointer;
+  transition: transform .16s ease, background-color .16s ease, color .16s ease;
+}
+.market-link-primary {
+  background: #000;
+  color: #fff;
+}
+.market-link-secondary {
+  background: #fff;
+  color: #000;
 }
 .market-link::after {
   content: "";
-  width: 5px;
-  height: 5px;
-  margin-left: 5px;
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  margin-left: 10px;
   border-top: 1.5px solid currentColor;
   border-right: 1.5px solid currentColor;
   transform: rotate(45deg);
 }
-.market-link + .market-link {
-  margin-left: 4px;
-  padding-left: 11px;
-  border-left: 1px solid var(--line);
-}
 .market-link:hover {
-  color: var(--text);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  transform: translateY(-1px);
+}
+.market-link-primary:hover {
+  background: #262626;
+}
+.market-link-secondary:hover {
+  background: var(--soft);
 }
 .memo {
   margin: 0;
-  padding: 18px 18px 4px;
+  padding: 18px 20px 16px;
   color: var(--text);
   font-size: 15px;
+  line-height: 1.65;
 }
 .card-bottom {
   margin: 16px 18px 18px;
@@ -934,6 +983,10 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   .latest-keywords {
     max-width: 100%;
   }
+  .latest-keywords a {
+    min-height: 42px;
+    padding: 0 13px;
+  }
   .recent-grid {
     grid-template-columns: 1fr;
   }
@@ -977,20 +1030,24 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     height: 27px;
     font-size: 11px;
   }
-  .card-title-row { gap: 8px; }
+  .card-title-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
   .item-kicker {
+    justify-self: start;
+    margin-left: 37px;
     font-size: 11px;
-    padding-top: 6px;
+    padding: 6px 9px;
   }
   .card-actions {
-    justify-content: flex-start;
-    gap: 6px;
-    max-width: none;
-    padding-left: 37px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 0 16px 16px;
   }
   .card-top h3 { font-size: 25px; }
   .memo {
-    padding: 16px 16px 2px;
+    padding: 16px 16px 14px;
     font-size: 15px;
   }
   .card-bottom {
