@@ -776,19 +776,20 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 48px;
-  padding: 0 14px;
+  min-height: 44px;
+  padding: 0 12px;
   border: 1.5px solid #000;
   border-radius: 6px;
   font-size: 13px;
   font-weight: 900;
   text-decoration: none;
+  white-space: nowrap;
   cursor: pointer;
   transition: transform .16s ease, background-color .16s ease, color .16s ease;
 }
 .market-link-primary {
-  background: #000;
-  color: #fff;
+  background: var(--soft);
+  color: #000;
 }
 .market-link-secondary {
   background: #fff;
@@ -808,7 +809,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   transform: translateY(-1px);
 }
 .market-link-primary:hover {
-  background: #262626;
+  background: #e8eaed;
 }
 .market-link-secondary:hover {
   background: var(--soft);
@@ -1041,9 +1042,15 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
     padding: 6px 9px;
   }
   .card-actions {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     padding: 0 16px 16px;
+  }
+  .market-link {
+    min-width: 0;
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 12px;
   }
   .card-top h3 { font-size: 25px; }
   .memo {
@@ -1052,5 +1059,11 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   }
   .card-bottom {
     margin: 14px 16px 16px;
+  }
+}
+
+@media (max-width: 340px) {
+  .card-actions {
+    grid-template-columns: 1fr;
   }
 }
