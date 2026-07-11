@@ -207,5 +207,16 @@
     "evidence_docs": [
       "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-07-09.html"
     ]
+  },
+  {
+    "day": 20,
+    "date": "2026-07-11",
+    "category": "스포츠/레저",
+    "items": 10,
+    "rising": 5,
+    "page": "day-20-2026-07-11-sports.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_스포츠_레저_2026-07-09.html"
+    ]
   }
 ]
