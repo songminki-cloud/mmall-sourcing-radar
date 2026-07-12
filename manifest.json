@@ -218,5 +218,16 @@
     "evidence_docs": [
       "evidence/curated_stage1_sourcing_gate_스포츠_레저_2026-07-09.html"
     ]
+  },
+  {
+    "day": 21,
+    "date": "2026-07-12",
+    "category": "가구/인테리어",
+    "items": 10,
+    "rising": 1,
+    "page": "day-21-2026-07-12-interior.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_가구_인테리어_2026-07-11.html"
+    ]
   }
 ]
