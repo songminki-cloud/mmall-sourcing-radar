@@ -240,5 +240,16 @@
     "evidence_docs": [
       "evidence/curated_stage1_sourcing_gate_생활_건강_2026-07-11.html"
     ]
+  },
+  {
+    "day": 23,
+    "date": "2026-07-14",
+    "category": "패션잡화",
+    "items": 8,
+    "rising": 1,
+    "page": "day-23-2026-07-14-fashion-accessory.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_패션잡화_2026-07-11.html"
+    ]
   }
 ]
