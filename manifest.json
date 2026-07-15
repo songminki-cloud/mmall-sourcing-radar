@@ -251,5 +251,14 @@
     "evidence_docs": [
       "evidence/curated_stage1_sourcing_gate_패션잡화_2026-07-11.html"
     ]
+  },
+  {
+    "day": 24,
+    "date": "2026-07-15",
+    "category": "화장품/미용",
+    "items": 10,
+    "rising": 2,
+    "page": "day-24-2026-07-15-beauty.html",
+    "evidence_docs": []
   }
 ]
