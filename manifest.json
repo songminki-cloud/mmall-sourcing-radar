@@ -260,5 +260,14 @@
     "rising": 2,
     "page": "day-24-2026-07-15-beauty.html",
     "evidence_docs": []
+  },
+  {
+    "day": 25,
+    "date": "2026-07-16",
+    "category": "식품",
+    "items": 10,
+    "rising": 5,
+    "page": "day-25-2026-07-16-food.html",
+    "evidence_docs": []
   }
 ]
