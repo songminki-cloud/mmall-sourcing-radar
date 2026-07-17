@@ -269,5 +269,14 @@
     "rising": 5,
     "page": "day-25-2026-07-16-food.html",
     "evidence_docs": []
+  },
+  {
+    "day": 26,
+    "date": "2026-07-17",
+    "category": "패션의류",
+    "items": 10,
+    "rising": 3,
+    "page": "day-26-2026-07-17-fashion.html",
+    "evidence_docs": []
   }
 ]
