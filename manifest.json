@@ -253,6 +253,39 @@
     ]
   },
   {
+    "day": 24,
+    "date": "2026-07-15",
+    "category": "화장품/미용",
+    "items": 0,
+    "rising": 0,
+    "page": "day-24-2026-07-15-beauty.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_화장품_미용_2026-07-14.html"
+    ]
+  },
+  {
+    "day": 25,
+    "date": "2026-07-16",
+    "category": "식품",
+    "items": 0,
+    "rising": 0,
+    "page": "day-25-2026-07-16-food.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_식품_2026-07-15.html"
+    ]
+  },
+  {
+    "day": 26,
+    "date": "2026-07-17",
+    "category": "패션의류",
+    "items": 0,
+    "rising": 0,
+    "page": "day-26-2026-07-17-fashion.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_패션의류_2026-07-16.html"
+    ]
+  },
+  {
     "day": 27,
     "date": "2026-07-18",
     "category": "출산/육아",
