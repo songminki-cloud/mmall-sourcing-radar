@@ -201,8 +201,8 @@
     "day": 19,
     "date": "2026-07-10",
     "category": "디지털/가전",
-    "items": 10,
-    "rising": 3,
+    "items": 0,
+    "rising": 0,
     "page": "day-19-2026-07-10-digital.html",
     "evidence_docs": [
       "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-07-09.html"
@@ -212,8 +212,8 @@
     "day": 20,
     "date": "2026-07-11",
     "category": "스포츠/레저",
-    "items": 10,
-    "rising": 5,
+    "items": 0,
+    "rising": 0,
     "page": "day-20-2026-07-11-sports.html",
     "evidence_docs": [
       "evidence/curated_stage1_sourcing_gate_스포츠_레저_2026-07-09.html"
@@ -253,30 +253,14 @@
     ]
   },
   {
-    "day": 24,
-    "date": "2026-07-15",
-    "category": "화장품/미용",
-    "items": 10,
-    "rising": 2,
-    "page": "day-24-2026-07-15-beauty.html",
-    "evidence_docs": []
-  },
-  {
-    "day": 25,
-    "date": "2026-07-16",
-    "category": "식품",
+    "day": 27,
+    "date": "2026-07-18",
+    "category": "출산/육아",
     "items": 10,
     "rising": 5,
-    "page": "day-25-2026-07-16-food.html",
-    "evidence_docs": []
-  },
-  {
-    "day": 26,
-    "date": "2026-07-17",
-    "category": "패션의류",
-    "items": 10,
-    "rising": 3,
-    "page": "day-26-2026-07-17-fashion.html",
-    "evidence_docs": []
+    "page": "day-27-2026-07-18-kids.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_출산_육아_2026-07-17.html"
+    ]
   }
 ]
