@@ -295,5 +295,16 @@
     "evidence_docs": [
       "evidence/curated_stage1_sourcing_gate_출산_육아_2026-07-17.html"
     ]
+  },
+  {
+    "day": 28,
+    "date": "2026-07-19",
+    "category": "디지털/가전",
+    "items": 10,
+    "rising": 5,
+    "page": "day-28-2026-07-19-digital.html",
+    "evidence_docs": [
+      "evidence/curated_stage1_sourcing_gate_디지털_가전_2026-07-18.html"
+    ]
   }
 ]
