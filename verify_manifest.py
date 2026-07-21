@@ -50,6 +50,27 @@ def main():
         if entry["page"] not in archive_links:
             ok = fail(f"archive-grid에 Day {entry['day']} ({entry['page']})가 없음")
 
+    # 6~8. 최신 3개 Day 마크업 회귀 검사 (2026-07-21 Day 30 포맷 퇴화 재발 방지)
+    # 과거 Day 파일은 시기별로 마크업이 달라 소급 적용하지 않는다. 신규 발행분만 검사한다.
+    latest3_pages = {ROOT / e["page"] for e in latest3}
+    for f in sorted(latest3_pages):
+        if not f.exists():
+            continue
+        html = f.read_text()
+
+        # 6. footer 누락
+        if "site-footer" not in html:
+            ok = fail(f"{f.name}에 <footer class=\"site-footer\">가 없음")
+
+        # 7. M몰 검색결과 문구가 카드 메모 안에 중복 노출됐는지
+        if re.search(r"M몰\s*검색결과\s*[:：]", html):
+            ok = fail(f"{f.name} 메모 문장에 '(M몰 검색결과: n개)'가 남아 있음 (버튼과 중복, 텍스트에서 제거해야 함)")
+
+        # 8. 순위 배지에 직전 순위(→)가 빠졌는지 (신규 진입/미확인 예외 문구는 허용)
+        for kicker in re.findall(r'<p class="item-kicker">(.*?)</p>', html):
+            if "→" not in kicker and "신규" not in kicker and "미확인" not in kicker:
+                ok = fail(f"{f.name}의 item-kicker '{kicker}'에 직전 순위(→)가 빠짐")
+
     if ok:
         print(f"PASS: Day 1~{len(days)} 전체 {len(days)}개, manifest/파일/index.html 모두 일치")
         return 0
