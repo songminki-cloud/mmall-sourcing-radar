@@ -66,10 +66,13 @@ def main():
         if re.search(r"M몰\s*검색결과\s*[:：]", html):
             ok = fail(f"{f.name} 메모 문장에 '(M몰 검색결과: n개)'가 남아 있음 (버튼과 중복, 텍스트에서 제거해야 함)")
 
-        # 8. 순위 배지에 직전 순위(→)가 빠졌는지 (신규 진입/미확인 예외 문구는 허용)
+        # 8. 순위 배지 포맷 검사. 직전 순위 데이터가 있으면 "N위 → M위 ... · 이모지 상승/하락/중립",
+        # 직전 순위 데이터를 원천에서 못 구했으면 "N위 · 이모지 상승/하락/중립"만 허용한다(2026-07-21 JD 확정).
+        # 둘 중 어느 쪽도 아니면(이모지·추세 라벨 자체가 빠진 경우) 회귀로 본다.
+        kicker_pattern = re.compile(r'^\d+위(\s*→\s*\d+위[^·]*)?\s*·\s*(📈 상승|📉 하락|➖ 중립)$')
         for kicker in re.findall(r'<p class="item-kicker">(.*?)</p>', html):
-            if "→" not in kicker and "신규" not in kicker and "미확인" not in kicker:
-                ok = fail(f"{f.name}의 item-kicker '{kicker}'에 직전 순위(→)가 빠짐")
+            if "신규" not in kicker and not kicker_pattern.match(kicker.strip()):
+                ok = fail(f"{f.name}의 item-kicker '{kicker}'가 고정 포맷(N위 [→ M위] · 이모지 상승/하락/중립)에 안 맞음")
 
     if ok:
         print(f"PASS: Day 1~{len(days)} 전체 {len(days)}개, manifest/파일/index.html 모두 일치")
