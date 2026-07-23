@@ -333,5 +333,14 @@
     "rising": 2,
     "page": "day-31-2026-07-22-health.html",
     "evidence_docs": []
+  },
+  {
+    "day": 32,
+    "date": "2026-07-22",
+    "category": "패션잡화",
+    "items": 10,
+    "rising": 0,
+    "page": "day-32-2026-07-22-fashion-accessory.html",
+    "evidence_docs": []
   }
 ]
