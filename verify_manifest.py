@@ -104,6 +104,37 @@ def main():
                 f"발행 당일 실행이 아니면 무시해도 되지만, 당일 발행이라면 기준일 오류 가능성이 높음."
             )
 
+    # 11. index.html '최신 리포트' 섹션 카드가 정확히 3개인지 (2026-07-23 Day 32 발행 시
+    # Day 29/28 카드가 안 지워지고 5개로 남았던 사고 재발 방지. 4번 검사는 '최신 3개가
+    # 포함돼 있는지'만 봐서 이 사고를 못 잡았다)
+    recent_section = re.search(r'<section class="recent-section".*?</section>', index_html, re.S)
+    if recent_section:
+        card_count = len(re.findall(r'<article class="latest-card recent-card', recent_section.group(0)))
+        if card_count != 3:
+            ok = fail(f"index.html 최신 리포트 섹션 카드가 {card_count}개임 (정확히 3개여야 함)")
+    else:
+        ok = fail("index.html에서 recent-section을 찾을 수 없음")
+
+    # 12. 최신 카드의 latest-kicker 날짜가 실제 기준일(파일명 날짜)과 일치하는지
+    # (2026-07-23 Day 32 카드 날짜 배지가 하루 밀렸던 사고 재발 방지)
+    for entry in latest3:
+        page = ROOT / entry["page"]
+        if not page.exists():
+            continue
+        m = re.match(r"day-\d+-(\d{4}-\d{2}-\d{2})-", entry["page"])
+        if not m:
+            continue
+        filename_date = m.group(1)
+        card_match = re.search(
+            re.escape(entry["page"]) + r'.*?<span class="latest-kicker">(\d{4}-\d{2}-\d{2})</span>',
+            index_html, re.S
+        )
+        if card_match and card_match.group(1) != filename_date:
+            ok = fail(
+                f"index.html Day {entry['day']} 카드의 latest-kicker 날짜({card_match.group(1)})가 "
+                f"실제 기준일({filename_date})과 다름"
+            )
+
     if ok:
         print(f"PASS: Day 1~{len(days)} 전체 {len(days)}개, manifest/파일/index.html 모두 일치")
         return 0
