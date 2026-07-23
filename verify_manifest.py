@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Publish 전 필수 검증: manifest.json과 실제 day-*.html 파일, index.html 카드가 어긋나지 않는지 확인한다.
 하나라도 실패하면 exit 1로 push를 막는다."""
+import datetime
 import json
 import re
 import sys
@@ -73,6 +74,35 @@ def main():
         for kicker in re.findall(r'<p class="item-kicker">(.*?)</p>', html):
             if "신규" not in kicker and not kicker_pattern.match(kicker.strip()):
                 ok = fail(f"{f.name}의 item-kicker '{kicker}'가 고정 포맷(N위 [→ M위] · 이모지 상승/하락/중립)에 안 맞음")
+
+    # 9. 파일명 날짜와 페이지 내 기준일이 일치하는지 (2026-07-23 Day 32 기준일 라벨링 오류 재발 방지)
+    for entry in manifest:
+        page = ROOT / entry["page"]
+        if not page.exists():
+            continue
+        m = re.match(r"day-\d+-(\d{4}-\d{2}-\d{2})-", entry["page"])
+        if not m:
+            continue
+        filename_date = m.group(1)
+        html = page.read_text()
+        ref_match = re.search(r"기준일[^0-9]*(\d{4}-\d{2}-\d{2})", html)
+        if ref_match and ref_match.group(1) != filename_date:
+            ok = fail(
+                f"{entry['page']}: 파일명 날짜({filename_date})와 본문 기준일({ref_match.group(1)})이 다름"
+            )
+
+    # 10. 최신 Day의 기준일이 오늘(스크립트 실행일, 로컬 시각) 날짜와 같은지 경고
+    # 원본 DataLab 수집 파일은 항상 실행일보다 하루 전 날짜가 붙으므로, 그 날짜를 그대로
+    # 기준일로 베끼면 하루가 밀린다(Day 32 사고). 발행 시점에는 반드시 오늘 날짜여야 한다.
+    today = datetime.date.today().isoformat()
+    if latest3:
+        latest_entry = latest3[0]
+        m = re.match(r"day-\d+-(\d{4}-\d{2}-\d{2})-", latest_entry["page"])
+        if m and m.group(1) != today:
+            print(
+                f"WARN: 최신 Day({latest_entry['page']})의 날짜가 오늘({today})과 다름. "
+                f"발행 당일 실행이 아니면 무시해도 되지만, 당일 발행이라면 기준일 오류 가능성이 높음."
+            )
 
     if ok:
         print(f"PASS: Day 1~{len(days)} 전체 {len(days)}개, manifest/파일/index.html 모두 일치")
