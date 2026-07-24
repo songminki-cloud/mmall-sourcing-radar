@@ -336,11 +336,20 @@
   },
   {
     "day": 32,
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "category": "패션잡화",
     "items": 10,
     "rising": 0,
     "page": "day-32-2026-07-23-fashion-accessory.html",
+    "evidence_docs": []
+  },
+  {
+    "day": 33,
+    "date": "2026-07-24",
+    "category": "화장품/미용",
+    "items": 10,
+    "rising": 2,
+    "page": "day-33-2026-07-24-cosmetics-beauty.html",
     "evidence_docs": []
   }
 ]
