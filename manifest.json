@@ -360,5 +360,14 @@
     "rising": 5,
     "page": "day-34-2026-07-25-food.html",
     "evidence_docs": []
+  },
+  {
+    "day": 35,
+    "date": "2026-07-27",
+    "category": "출산/육아",
+    "items": 10,
+    "rising": 2,
+    "page": "day-35-2026-07-27-parenting.html",
+    "evidence_docs": []
   }
 ]
