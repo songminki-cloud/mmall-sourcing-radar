@@ -20,11 +20,14 @@ def main():
     manifest = json.loads((ROOT / "manifest.json").read_text())
     days = sorted(x["day"] for x in manifest)
 
-    # 1. day 번호가 1..N 연속인지 (이빨빠짐 방지)
-    expected = list(range(1, len(days) + 1))
-    if days != expected:
-        missing = sorted(set(expected) - set(days))
-        ok = fail(f"manifest day 번호가 연속이 아님. 빠진 day: {missing}")
+    # 1. day 번호 중복만 실패 처리한다.
+    # Day는 공식 회차이며, JD가 발행을 스킵하면 archive gap이 생길 수 있다.
+    if len(days) != len(set(days)):
+        ok = fail("manifest day 번호가 중복됨")
+    expected = list(range(min(days, default=1), max(days, default=0) + 1))
+    missing = sorted(set(expected) - set(days))
+    if missing:
+        print(f"WARN: manifest에 스킵된 Day가 있음: {missing}")
 
     # 2. manifest에 있는 모든 page 파일이 실제로 존재하는지
     for entry in manifest:
@@ -70,7 +73,7 @@ def main():
         # 8. 순위 배지 포맷 검사. 직전 순위 데이터가 있으면 "N위 → M위 ... · 이모지 상승/하락/중립",
         # 직전 순위 데이터를 원천에서 못 구했으면 "N위 · 이모지 상승/하락/중립"만 허용한다(2026-07-21 JD 확정).
         # 둘 중 어느 쪽도 아니면(이모지·추세 라벨 자체가 빠진 경우) 회귀로 본다.
-        kicker_pattern = re.compile(r'^\d+위(\s*→\s*\d+위[^·]*)?\s*·\s*(📈 상승|📉 하락|➖ 중립)$')
+        kicker_pattern = re.compile(r'^(?:\d+위|100위 밖)(\s*→\s*\d+위[^·]*)?\s*·\s*(📈 상승|📉 하락|➖ 중립)$')
         for kicker in re.findall(r'<p class="item-kicker">(.*?)</p>', html):
             if "신규" not in kicker and not kicker_pattern.match(kicker.strip()):
                 ok = fail(f"{f.name}의 item-kicker '{kicker}'가 고정 포맷(N위 [→ M위] · 이모지 상승/하락/중립)에 안 맞음")
