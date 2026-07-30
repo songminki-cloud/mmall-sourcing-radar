@@ -15,19 +15,55 @@ def fail(msg):
     return False
 
 
+# Day 회차의 카테고리 순환 (2026-07-30 JD 확정: Day 번호는 마지막 발행 +1로만 증가,
+# 카테고리는 직전 발행 카테고리의 다음 순환. 달력 날짜에서 Day를 계산하지 않는다.)
+CATEGORY_CYCLE = (
+    "디지털/가전", "스포츠/레저", "가구/인테리어", "생활/건강", "패션잡화",
+    "화장품/미용", "식품", "패션의류", "출산/육아",
+)
+# 과거에 이미 발행돼 소급 수정하지 않는 순환 예외: Day 34 식품 → Day 35 출산/육아
+# (2026-07-26 미발행으로 패션의류 회차가 번호 압축과 함께 건너뛰어짐)
+CYCLE_EXCEPTIONS = {(34, 35)}
+
+
 def main():
     ok = True
     manifest = json.loads((ROOT / "manifest.json").read_text())
     days = sorted(x["day"] for x in manifest)
 
-    # 1. day 번호 중복만 실패 처리한다.
-    # Day는 공식 회차이며, JD가 발행을 스킵하면 archive gap이 생길 수 있다.
+    # 1. day 번호 중복·결번은 모두 실패다. Day는 순차 발행 원장이며,
+    # 결번을 허용하면 달력 계산과 원장이 다시 어긋난다 (Day 35~39 사고).
     if len(days) != len(set(days)):
         ok = fail("manifest day 번호가 중복됨")
     expected = list(range(min(days, default=1), max(days, default=0) + 1))
     missing = sorted(set(expected) - set(days))
     if missing:
-        print(f"WARN: manifest에 스킵된 Day가 있음: {missing}")
+        ok = fail(f"manifest에 결번 Day가 있음: {missing} (Day는 마지막 발행 +1로만 증가해야 함)")
+
+    # 1-1. 연속 Day의 카테고리가 고정 순환을 따르는지. 회차 스킵은 JD 명시 승인 시에만
+    # 가능하며 그 경우 CYCLE_EXCEPTIONS에 (직전Day, 다음Day)를 추가하고 커밋 메시지에 남긴다.
+    by_day = {int(x["day"]): x for x in manifest}
+    for day in sorted(by_day):
+        nxt = by_day.get(day + 1)
+        cur = by_day[day]
+        if not nxt or (day, day + 1) in CYCLE_EXCEPTIONS:
+            continue
+        if cur["category"] in CATEGORY_CYCLE:
+            want = CATEGORY_CYCLE[(CATEGORY_CYCLE.index(cur["category"]) + 1) % len(CATEGORY_CYCLE)]
+            if nxt["category"] != want:
+                ok = fail(
+                    f"Day {day + 1} 카테고리({nxt['category']})가 순환 규칙과 다름: "
+                    f"Day {day} {cur['category']} 다음은 {want}여야 함 "
+                    "(의도된 스킵이면 verify_manifest.py CYCLE_EXCEPTIONS에 명시)"
+                )
+
+    # 1-2. 날짜는 Day 순서대로 단조 증가(같은 날짜 허용)해야 한다.
+    prev_date = None
+    for day in sorted(by_day):
+        cur_date = by_day[day].get("date", "")
+        if prev_date and cur_date < prev_date:
+            ok = fail(f"Day {day} 날짜({cur_date})가 직전 Day({prev_date})보다 이릅니다")
+        prev_date = cur_date
 
     # 2. manifest에 있는 모든 page 파일이 실제로 존재하는지
     for entry in manifest:
