@@ -113,6 +113,17 @@ def main():
         for kicker in re.findall(r'<p class="item-kicker">(.*?)</p>', html):
             if "신규" not in kicker and not kicker_pattern.match(kicker.strip()):
                 ok = fail(f"{f.name}의 item-kicker '{kicker}'가 고정 포맷(N위 [→ M위] · 이모지 상승/하락/중립)에 안 맞음")
+            # 8-1. 배지는 카드에 보이는 직전→현재 두 숫자만 따른다 (2026-07-31 JD 확정,
+            # 모기장 22→22·하락 사고). 4주 궤적·예측 라벨로 배지를 정하면 숫자와 충돌한다.
+            semantic = re.search(r"(\d+)위\s*→\s*(\d+)위[^·]*·\s*(?:📈|📉|➖)\s*(상승|하락|중립)", kicker)
+            if semantic:
+                prev_rank, cur_rank, badge = int(semantic.group(1)), int(semantic.group(2)), semantic.group(3)
+                expected = "상승" if cur_rank < prev_rank else "하락" if cur_rank > prev_rank else "중립"
+                if badge != expected:
+                    ok = fail(
+                        f"{f.name}의 item-kicker '{kicker}': 순위 숫자와 배지 충돌 "
+                        f"({prev_rank}→{cur_rank}는 {expected}여야 함)"
+                    )
 
     # 9. 파일명 날짜와 페이지 내 기준일이 일치하는지 (2026-07-23 Day 32 기준일 라벨링 오류 재발 방지)
     for entry in manifest:
