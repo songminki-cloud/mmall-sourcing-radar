@@ -396,5 +396,14 @@
     "rising": 7,
     "page": "day-38-2026-07-30-interior.html",
     "evidence_docs": []
+  },
+  {
+    "day": 39,
+    "date": "2026-07-31",
+    "category": "생활/건강",
+    "items": 10,
+    "rising": 4,
+    "page": "day-39-2026-07-31-health.html",
+    "evidence_docs": []
   }
 ]
