@@ -405,5 +405,14 @@
     "rising": 4,
     "page": "day-39-2026-07-31-health.html",
     "evidence_docs": []
+  },
+  {
+    "day": 40,
+    "date": "2026-08-03",
+    "category": "패션잡화",
+    "items": 10,
+    "rising": 3,
+    "page": "day-40-2026-08-03-fashion-accessory.html",
+    "evidence_docs": []
   }
 ]
