@@ -102,6 +102,12 @@ def main():
         if "site-footer" not in html:
             ok = fail(f"{f.name}에 <footer class=\"site-footer\">가 없음")
 
+        # 6-1. Day 41부터 페이지는 render_day_page.py 산출물이어야 한다 (2026-08-03 Day 40
+        # 템플릿 이탈 사고 후 발행 경로 탈-LLM). 손으로 조립한 페이지는 발행 불가.
+        m_day = re.match(r"day-(\d+)-", f.name)
+        if m_day and int(m_day.group(1)) >= 41 and 'name="generator" content="render-day-page' not in html:
+            ok = fail(f"{f.name}가 render_day_page.py 산출물이 아님 — 발행 페이지는 렌더러로만 생성한다")
+
         # 7. M몰 검색결과 문구가 카드 메모 안에 중복 노출됐는지
         if re.search(r"M몰\s*검색결과\s*[:：]", html):
             ok = fail(f"{f.name} 메모 문장에 '(M몰 검색결과: n개)'가 남아 있음 (버튼과 중복, 텍스트에서 제거해야 함)")
