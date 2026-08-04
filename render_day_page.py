@@ -29,7 +29,7 @@ CATEGORY_SLUGS = {
     "가구/인테리어": "interior",
     "생활/건강": "health",
     "패션잡화": "fashion-accessory",
-    "화장품/미용": "beauty",
+    "화장품/미용": "cosmetics-beauty",
     "식품": "food",
     "패션의류": "fashion",
     "출산/육아": "parenting",
@@ -165,7 +165,7 @@ def render_page(pkg: dict, manifest: list[dict], page_name: str) -> str:
       <a class="back-link" href="index.html">목록으로</a>
       <h1>Day {day} · {category}</h1>
       <p class="report-date">기준일 {date}</p>
-      <p class="hero-copy">네이버 DataLab {category} TOP100과 M몰 모바일 검색 실측을 기준으로, 오늘 MD가 먼저 볼 키워드와 구색 공백을 정리한 리포트입니다.</p>
+      <p class="hero-copy">네이버 DataLab {category} TOP100에서 주요 키워드를 선별하고, 향후 2~4주 흐름을 함께 살펴본 MD 리포트입니다.</p>
     </header>
 
     <section class="focus-section">
