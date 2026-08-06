@@ -1,0 +1,132 @@
+{
+  "day": 43,
+  "category": "패션의류",
+  "date": "2026-08-06",
+  "question": "패션의류 검색은 원피스 중심을 유지하면서도, 8월 초 하의 핏과 얇은 상의로 구매 질문을 나누고 있는가?",
+  "md_comment_paragraphs": [
+    "원피스는 흔들리지 않았습니다. 패션의류 최상단을 4주 내내 지켰고, 캐리스노트는 폭염 속 쉬폰·크링클 원피스 판매 호조를 냈습니다. 다만 오늘의 새 판단은 원피스 확대보다 반바지와 팬츠의 모양입니다. 여성반바지와 남자반바지는 7월 초보다 상단 가까이 들어왔고, 버뮤다팬츠는 노출이 적은 여름 하의를 찾는 흐름을 보탭니다.",
+    "반대 신호도 있습니다. 여름가디건은 살안타템 거래 증가와 추천 글이 있어도 7월 초의 강도는 잃었습니다. 감탄브라는 자세브라·에어쿨 비교가 이어지지만 당일 움직임은 약했고, 카프리팬츠도 화제성에 비해 검색 강도가 내려왔습니다. 오늘은 패션의류 전체가 새로 달아오른 날이 아니라, 이미 큰 축은 유지되고 일부 핏 키워드만 따로 움직인 날입니다.",
+    "M몰은 원피스 201개, 티셔츠 1,181개, 남자반팔티 185개처럼 기본 구색이 충분합니다. 블라우스는 10개, 버뮤다팬츠는 14개, 카프리팬츠는 2개라 선택 폭이 좁고, 감탄브라는 0개입니다. 신규 소싱은 넓은 원피스보다 감탄브라 공백과 버뮤다팬츠의 낮은 가격대부터 확인하는 편이 낫습니다."
+  ],
+  "keywords": [
+    {
+      "order": 1,
+      "keyword": "원피스",
+      "header": "[원피스](https://msearch.shopping.naver.com/search/all?query=%EC%9B%90%ED%94%BC%EC%8A%A4) · 1위 → 1위 · ➖ 중립",
+      "memo": "캐리스노트는 폭염에 쉬폰·크링클 원피스 판매 호조를 냈고, 임산부 원피스와 여행지 스냅룩 후기가 같이 붙었습니다. 시원한 소재와 외출용 착장이 함께 버팁니다.",
+      "mmall": {
+        "count": 201,
+        "min_price": 22000,
+        "max_price": 725000
+      }
+    },
+    {
+      "order": 2,
+      "keyword": "블라우스",
+      "header": "[블라우스](https://msearch.shopping.naver.com/search/all?query=%EB%B8%94%EB%9D%BC%EC%9A%B0%EC%8A%A4) · 3위 → 3위 · ➖ 중립",
+      "memo": "로제의 12만 원대 블라우스 착용 이슈가 있고, 하객룩·출근룩 추천도 이어집니다. 화제성은 짧게 들어오지만 실제 구매는 여름 출근 상의와 약속용 상의로 갈립니다.",
+      "mmall": {
+        "count": 10,
+        "min_price": 58500,
+        "max_price": 495000
+      }
+    },
+    {
+      "order": 3,
+      "keyword": "티셔츠",
+      "header": "[티셔츠](https://msearch.shopping.naver.com/search/all?query=%ED%8B%B0%EC%85%94%EC%B8%A0) · 6위 → 5위 · 📈 상승",
+      "memo": "30일 연속 착용해도 냄새가 덜 난다는 기능성 티셔츠와 세인트제임스 협업 상품이 동시에 화제를 만들었습니다. 냉감·골프·주문제작까지 붙어, 한 벌 추가 구매보다 땀, 로고, 활동복 중 조건을 찍고 들어가는 흐름입니다.",
+      "mmall": {
+        "count": 1181,
+        "min_price": 11000,
+        "max_price": 659000
+      }
+    },
+    {
+      "order": 4,
+      "keyword": "여성반바지",
+      "header": "[여성반바지](https://msearch.shopping.naver.com/search/all?query=%EC%97%AC%EC%84%B1%EB%B0%98%EB%B0%94%EC%A7%80) · 14위 → 14위 · ➖ 중립",
+      "memo": "버뮤다 5부, 러닝 쇼츠, 냉감 밴딩 반바지가 반복됩니다. 짧은 팬츠 하나보다 운동·잠옷·일상용 길이를 나눠 고릅니다.",
+      "mmall": {
+        "count": 45,
+        "min_price": 24500,
+        "max_price": 1812500
+      }
+    },
+    {
+      "order": 5,
+      "keyword": "여름가디건",
+      "header": "[여름가디건](https://msearch.shopping.naver.com/search/all?query=%EC%97%AC%EB%A6%84%EA%B0%80%EB%94%94%EA%B1%B4) · 15위 → 15위 · ➖ 중립",
+      "memo": "살안타템 거래 증가는 남아 있지만 4주 흐름은 계속 약해졌습니다. 자외선 가림과 냉방 실내 대응은 유효해도, 막바지 추가 구매 강도는 낮아졌습니다.",
+      "mmall": {
+        "count": 20,
+        "min_price": 45000,
+        "max_price": 419000
+      }
+    },
+    {
+      "order": 6,
+      "keyword": "남자반팔티",
+      "header": "[남자반팔티](https://msearch.shopping.naver.com/search/all?query=%EB%82%A8%EC%9E%90%EB%B0%98%ED%8C%94%ED%8B%B0) · 21위 → 21위 · ➖ 중립",
+      "memo": "유니클로 1만원대 반팔과 냉감 폴로, 헨리넥 후기들이 같이 보입니다. 브랜드 티셔츠보다 매일 입는 기본형과 기능성 소재를 비교하는 구매가 남아 있습니다.",
+      "mmall": {
+        "count": 185,
+        "min_price": 39000,
+        "max_price": 419000
+      }
+    },
+    {
+      "order": 7,
+      "keyword": "남자반바지",
+      "header": "[남자반바지](https://msearch.shopping.naver.com/search/all?query=%EB%82%A8%EC%9E%90%EB%B0%98%EB%B0%94%EC%A7%80) · 22위 → 22위 · ➖ 중립",
+      "memo": "4부·5부·6부 길이와 러닝·골프·카고 용도가 반복됩니다. 짧은 하의 수요가 커졌다기보다 길이와 활동 용도를 먼저 고르는 쪽입니다.",
+      "mmall": {
+        "count": 26,
+        "min_price": 46800,
+        "max_price": 398000
+      }
+    },
+    {
+      "order": 8,
+      "keyword": "감탄브라",
+      "header": "[감탄브라](https://msearch.shopping.naver.com/search/all?query=%EA%B0%90%ED%83%84%EB%B8%8C%EB%9D%BC) · 24위 → 25위 · 📉 하락",
+      "memo": "자세브라, 에어쿨, 임산부 속옷 비교 후기가 이어집니다. 큰 상승 신호는 약하지만, 여름 이너웨어 안에서 브랜드명으로 직접 찾는 구매는 남아 있습니다.",
+      "mmall": {
+        "count": 0,
+        "min_price": 0,
+        "max_price": 0
+      }
+    },
+    {
+      "order": 9,
+      "keyword": "버뮤다팬츠",
+      "header": "[버뮤다팬츠](https://msearch.shopping.naver.com/search/all?query=%EB%B2%84%EB%AE%A4%EB%8B%A4%ED%8C%AC%EC%B8%A0) · 36위 → 34위 · 📈 상승",
+      "memo": "제니 착용 이슈가 붙은 트리밍버드 팬츠는 상반기 매출 증가까지 같이 냈습니다. 7부·롱기장·린넨 버뮤다 추천도 이어져, 반바지보다 덜 짧고 긴바지보다 가벼운 하의가 다시 비교됩니다.",
+      "mmall": {
+        "count": 14,
+        "min_price": 44500,
+        "max_price": 339000
+      }
+    },
+    {
+      "order": 10,
+      "keyword": "카프리팬츠",
+      "header": "[카프리팬츠](https://msearch.shopping.naver.com/search/all?query=%EC%B9%B4%ED%94%84%EB%A6%AC%ED%8C%AC%EC%B8%A0) · 40위 → 43위 · 📉 하락",
+      "memo": "핀터레스트 유행템 목록과 송혜교 착용 사진으로 이름은 다시 돌았습니다. 하지만 후기 쪽은 \"생각보다 어렵다\", 기장별 비교, 몸매 보정처럼 착용 난이도를 먼저 묻습니다. 지금은 대량 소싱보다 기장과 핏을 소수 상품으로 검증해야 합니다.",
+      "mmall": {
+        "count": 2,
+        "min_price": 97300,
+        "max_price": 114000
+      }
+    }
+  ],
+  "md_judgment": "• 우선 검토: 감탄브라, 버뮤다팬츠, 블라우스\n• 보류: 원피스, 티셔츠, 남자반팔티, 남자반바지, 카프리팬츠\n• 제외: 여름가디건 신규 확대, 여성반바지 대량 확대",
+  "notes": "• Day·카테고리·기준일은 원장 기준 Day 43 패션의류, 기준일 2026-08-06입니다. DataLab 원천은 2026-08-05 완료 스냅샷입니다.\n• 네이버쇼핑 상위 상품 수집은 10개 모두 실패해 네이버 상품명·가격 앵커와 직전 대비 상품 속성 변화 주장은 쓰지 않았습니다.\n• M몰 검색결과는 원피스 201개, 블라우스 10개, 티셔츠 1,181개, 여성반바지 45개, 여름가디건 20개, 남자반팔티 185개, 남자반바지 26개, 감탄브라 0개, 버뮤다팬츠 14개, 카프리팬츠 2개입니다.\n• 검증 모드라 승인 전에는 웹과 그룹방에 반영하지 않습니다.",
+  "approval": {
+    "timestamp": "2026-08-06T10:28:05+09:00",
+    "source": "JD_Telegram_그냥_오늘_내게준_초안으로_발행해줘"
+  },
+  "source_file": "outputs/jay_pickers/reports/stage1_approved_day43_2026-08-06.md",
+  "source_sha256": "c2ebef0785325fe04ef1c3e148ebc8811b29752c00b6dbb304e12b3875b29e67",
+  "probe_file": "/Users/Jay/.openclaw/workspace/ai-spaces/Jay_Pickers/outputs/jay_pickers/mmall_probe/mmall_probe_2026-08-06.json"
+}
