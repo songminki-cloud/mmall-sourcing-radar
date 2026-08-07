@@ -117,7 +117,9 @@ def main():
         # 둘 중 어느 쪽도 아니면(이모지·추세 라벨 자체가 빠진 경우) 회귀로 본다.
         kicker_pattern = re.compile(r'^(?:\d+위|100위 밖)(\s*→\s*\d+위[^·]*)?\s*·\s*(📈 상승|📉 하락|➖ 중립)$')
         for kicker in re.findall(r'<p class="item-kicker">(.*?)</p>', html):
-            if "신규" not in kicker and not kicker_pattern.match(kicker.strip()):
+            # "첫 관측 N위 · 🆕"는 2026-08-08 Top500 체제의 신규 진입 표기 예외다
+            # (skill 3-2.1의 "신규 진입일 때만 예외를 명시적으로 표시"의 구현).
+            if "신규" not in kicker and "첫 관측" not in kicker and not kicker_pattern.match(kicker.strip()):
                 ok = fail(f"{f.name}의 item-kicker '{kicker}'가 고정 포맷(N위 [→ M위] · 이모지 상승/하락/중립)에 안 맞음")
             # 8-1. 배지는 카드에 보이는 직전→현재 두 숫자만 따른다 (2026-07-31 JD 확정,
             # 모기장 22→22·하락 사고). 4주 궤적·예측 라벨로 배지를 정하면 숫자와 충돌한다.

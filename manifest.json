@@ -441,5 +441,14 @@
     "rising": 2,
     "page": "day-43-2026-08-06-fashion.html",
     "evidence_docs": []
+  },
+  {
+    "day": 44,
+    "date": "2026-08-08",
+    "category": "출산/육아",
+    "items": 10,
+    "rising": 0,
+    "page": "day-44-2026-08-08-parenting.html",
+    "evidence_docs": []
   }
 ]
