@@ -141,7 +141,7 @@ def render_page(pkg: dict, manifest: list[dict], page_name: str) -> str:
         m = k.get("mmall")
         counts.append(f"{k['keyword']} {int(m['count'])}개" if m and m.get("count") is not None else f"{k['keyword']} 미확인")
     basis_items = [
-        f"원천은 네이버 DataLab {category} TOP100 수집분과 {date} M몰 로그인 전 모바일 검색 실측입니다.",
+        f"원천은 네이버 DataLab {category} 인기검색어 Top500 수집분과 {date} M몰 로그인 전 모바일 검색 실측입니다.",
         "M몰 검색결과는 " + ", ".join(counts) + "입니다.",
     ]
     for label, body in bullet_lines(pkg.get("notes", "")):
@@ -165,7 +165,7 @@ def render_page(pkg: dict, manifest: list[dict], page_name: str) -> str:
       <a class="back-link" href="index.html">목록으로</a>
       <h1>Day {day} · {category}</h1>
       <p class="report-date">기준일 {date}</p>
-      <p class="hero-copy">네이버 DataLab {category} TOP100에서 주요 키워드를 선별하고, 향후 2~4주 흐름을 함께 살펴본 MD 리포트입니다.</p>
+      <p class="hero-copy">네이버 DataLab {category} 인기검색어 Top500에서 눈에 띄는 키워드를 골라, 왜 지금 검색되는지와 M몰 소싱 관점을 함께 정리한 MD 리포트입니다.</p>
     </header>
 
     <section class="focus-section">
@@ -196,7 +196,7 @@ def render_page(pkg: dict, manifest: list[dict], page_name: str) -> str:
       <div class="evidence-grid"></div>
     </details>
     <footer class="site-footer">
-      <p>기준: 네이버 DataLab 쇼핑인사이트 TOP100, 네이버쇼핑 상위 노출 상품명, M몰 모바일 로그인 전 검색 노출.</p>
+      <p>기준: 네이버 DataLab 쇼핑인사이트 인기검색어 Top500, M몰 모바일 로그인 전 검색 노출, 확인된 화제성 출처.</p>
       <p>DataLab과 쇼핑 클릭 지표는 정규화된 비율이며 절대 검색량이 아닙니다. M몰 수치는 내부 재고가 아니라 모바일 노출면 기준입니다.</p>
     </footer>
   </main>
