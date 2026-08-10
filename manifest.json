@@ -450,5 +450,14 @@
     "rising": 0,
     "page": "day-44-2026-08-08-parenting.html",
     "evidence_docs": []
+  },
+  {
+    "day": 45,
+    "date": "2026-08-10",
+    "category": "디지털/가전",
+    "items": 10,
+    "rising": 1,
+    "page": "day-45-2026-08-10-digital.html",
+    "evidence_docs": []
   }
 ]
