@@ -468,5 +468,14 @@
     "rising": 1,
     "page": "day-46-2026-08-11-sports.html",
     "evidence_docs": []
+  },
+  {
+    "day": 47,
+    "date": "2026-08-12",
+    "category": "가구/인테리어",
+    "items": 10,
+    "rising": 0,
+    "page": "day-47-2026-08-12-interior.html",
+    "evidence_docs": []
   }
 ]
