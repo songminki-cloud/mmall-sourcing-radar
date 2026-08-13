@@ -477,5 +477,14 @@
     "rising": 0,
     "page": "day-47-2026-08-12-interior.html",
     "evidence_docs": []
+  },
+  {
+    "day": 48,
+    "date": "2026-08-13",
+    "category": "생활/건강",
+    "items": 10,
+    "rising": 0,
+    "page": "day-48-2026-08-13-health.html",
+    "evidence_docs": []
   }
 ]
