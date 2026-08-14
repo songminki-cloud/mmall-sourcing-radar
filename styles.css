@@ -263,7 +263,9 @@ h2 {
   flex-wrap: wrap;
   gap: 7px;
   min-width: 0;
-  overflow: visible;
+  max-height: 83px;
+  align-content: flex-start;
+  overflow: hidden;
 }
 .latest-keywords a {
   display: inline-flex;
@@ -983,6 +985,7 @@ td a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px;
   }
   .latest-keywords {
     max-width: 100%;
+    max-height: 91px;
   }
   .latest-keywords a {
     min-height: 42px;
