@@ -251,8 +251,7 @@ def update_index(index_html: str, pkg: dict, page_name: str) -> str:
     # 재렌더(같은 페이지) 시 자기 카드는 제외하고 재구성한다.
     cards = [c for c in cards if page_name not in c]
     def demote(card: str) -> str:
-        card = card.replace('recent-card featured', 'recent-card plain')
-        return re.sub(r'\s*<div class="latest-keywords">.*?</div>', '', card, flags=re.S)
+        return card.replace('recent-card featured', 'recent-card plain')
 
     rebuilt = [featured_card(pkg, page_name)]
     if cards:
@@ -265,6 +264,13 @@ def update_index(index_html: str, pkg: dict, page_name: str) -> str:
         section_tail = section_tail.replace(c, "", 1)
     new_section = section_head + "\n\n\n".join(rebuilt[:3]) + section_tail
     index_html = index_html.replace(section, new_section, 1)
+    index_html = re.sub(
+        r'<p class="hero-copy">.*?</p>',
+        '<p class="hero-copy">네이버 DataLab 카테고리별 인기검색어를 넓게 보고, M몰 모바일 검색 노출과 외부 수요 신호를 함께 읽어 다음 소싱 후보를 정리한 MD 리포트입니다.</p>',
+        index_html,
+        count=1,
+        flags=re.S,
+    )
 
     # 아카이브 카드: 기존 자기 카드 제거 후 맨 앞에 삽입.
     index_html = re.sub(
