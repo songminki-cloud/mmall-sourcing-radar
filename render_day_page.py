@@ -207,7 +207,7 @@ def render_page(pkg: dict, manifest: list[dict], page_name: str) -> str:
 
 def featured_card(pkg: dict, page_name: str) -> str:
     day, category, date = pkg["day"], pkg["category"], pkg["date"]
-    first = home_card_lead(pkg)
+    first = " ".join(pkg["md_comment_paragraphs"][0].split())
     kw_links = "".join(
         f'<a href="{page_name}#keyword-{i + 1:02d}">{esc(k["keyword"])}</a>'
         for i, k in enumerate(pkg["keywords"])
@@ -220,22 +220,6 @@ def featured_card(pkg: dict, page_name: str) -> str:
               </a>
               <div class="latest-keywords">{kw_links}</div>
             </article>"""
-
-
-def home_card_lead(pkg: dict) -> str:
-    """홈 카드에서는 제목과 같은 카테고리 반복을 줄이고 관찰문부터 보여준다."""
-    category = pkg["category"]
-    first = " ".join(pkg["md_comment_paragraphs"][0].split())
-    prefix_patterns = [
-        rf"^{re.escape(category)}[은는]\s*",
-        rf"^{re.escape(category)}\s+",
-        rf"^이번\s+{re.escape(category)}\s*(흐름|검색|수요)?[은는]\s*",
-    ]
-    for pattern in prefix_patterns:
-        first = re.sub(pattern, "", first).strip()
-    if first and first[0].islower():
-        first = first[0].upper() + first[1:]
-    return first
 
 
 def archive_card(pkg: dict, page_name: str) -> str:
