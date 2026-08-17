@@ -1,0 +1,888 @@
+<title>소싱레이더 표지 10종</title>
+
+<style>
+:root{
+  /* 페이지 크롬 — 라이트 기본 */
+  --bg:#E6E7E4;
+  --panel:#FFFFFF;
+  --panel-2:#F3F4F1;
+  --fg:#0E1116;
+  --fg-2:#5B6270;
+  --fg-3:#878D99;
+  --line:#D3D5D1;
+  --line-2:#E2E3E0;
+  --accent:#1B3BE0;
+  --warn:#B23A0B;
+  --shadow:0 1px 2px rgba(14,17,22,.08), 0 12px 28px -18px rgba(14,17,22,.45);
+
+  /* 표지 브랜드 키트 — 테마와 무관하게 고정(인쇄물처럼 항상 같은 색) */
+  --ink:#0C0E12;
+  --ink-2:#171B22;
+  --paper:#EDE9E1;
+  --cobalt:#1B3BE0;
+  --signal:#FFD90A;
+  --alert:#E42B15;
+  --teal:#0B6E63;
+  --smoke:#9AA0A9;
+
+  --sans:"Pretendard","Pretendard Variable",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,"Roboto Mono","D2Coding",monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1218;
+    --panel:#171B23;
+    --panel-2:#1D222B;
+    --fg:#EDEFF3;
+    --fg-2:#99A1B0;
+    --fg-3:#6E7686;
+    --line:#272D38;
+    --line-2:#20252E;
+    --accent:#7B95FF;
+    --warn:#EFA061;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 16px 34px -20px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1218;
+  --panel:#171B23;
+  --panel-2:#1D222B;
+  --fg:#EDEFF3;
+  --fg-2:#99A1B0;
+  --fg-3:#6E7686;
+  --line:#272D38;
+  --line-2:#20252E;
+  --accent:#7B95FF;
+  --warn:#EFA061;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 16px 34px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 120px}
+
+/* ---------- 공통 타이포 ---------- */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-3);
+  margin:0 0 14px;
+}
+h1{
+  font-size:clamp(38px,6vw,62px);
+  line-height:1.12;
+  letter-spacing:-.035em;
+  font-weight:800;
+  margin:0 0 20px;
+  text-wrap:balance;
+}
+h2{
+  font-size:clamp(24px,3.4vw,32px);
+  line-height:1.25;
+  letter-spacing:-.03em;
+  font-weight:800;
+  margin:0;
+  text-wrap:balance;
+}
+h3{
+  font-size:19px;
+  line-height:1.35;
+  letter-spacing:-.02em;
+  font-weight:750;
+  margin:0;
+}
+p{margin:0}
+.lede{font-size:clamp(17px,2vw,20px);line-height:1.62;color:var(--fg-2);max-width:64ch}
+.note{font-size:14.5px;line-height:1.65;color:var(--fg-2)}
+.mono{font-family:var(--mono)}
+
+/* ---------- 섹션 ---------- */
+.hero{padding:88px 0 56px;border-bottom:1px solid var(--line)}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--fg-2);
+}
+.hero-meta span{
+  border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--panel);
+}
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:38px;max-width:70ch}
+
+/* ---------- 표지 프레임 ---------- */
+.frame{
+  width:calc(1080px * var(--k));
+  height:calc(1350px * var(--k));
+  overflow:hidden;
+  flex:none;
+  background:var(--ink);
+  box-shadow:var(--shadow);
+}
+.cv{
+  width:1080px;height:1350px;
+  transform-origin:top left;
+  transform:scale(var(--k));
+  position:relative;
+  overflow:hidden;
+  font-family:var(--sans);
+  line-height:1.05;
+  display:flex;flex-direction:column;
+}
+
+/* 표지 내부 공통 부품 (1080×1350 실좌표) */
+.pad{padding:78px 74px 150px} /* 하단 150px는 IG 조회수 배지 회피 */
+.cv-eyebrow{
+  font-family:var(--mono);font-size:32px;letter-spacing:.16em;font-weight:600;
+}
+.cv-mark{
+  position:absolute;right:64px;bottom:60px;
+  font-family:var(--mono);font-size:26px;letter-spacing:.22em;font-weight:600;opacity:.62;
+}
+.huge{font-weight:900;letter-spacing:-.055em;font-variant-numeric:tabular-nums;line-height:.86}
+.head{font-weight:850;letter-spacing:-.04em;line-height:1.08}
+.sub{font-weight:550;letter-spacing:-.02em;line-height:1.35}
+.photo{
+  background-color:#3A3F49;
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 16px,rgba(255,255,255,0) 16px 34px);
+  display:flex;align-items:center;justify-content:center;
+}
+.photo::after{
+  content:"사진";
+  font-family:var(--mono);font-size:26px;letter-spacing:.3em;color:rgba(255,255,255,.5);
+}
+/* IG 오버레이(조회수·캐러셀 아이콘) 침범 구역 */
+.safe-bl,.safe-tr{position:absolute;pointer-events:none}
+.safe-bl{left:0;bottom:0;width:250px;height:110px}
+.safe-tr{right:0;top:0;width:150px;height:150px}
+
+/* ---------- 진단 ---------- */
+.diag{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:44px;align-items:start}
+.faults{display:grid;gap:2px;background:var(--line-2);border:1px solid var(--line-2);border-radius:3px;overflow:hidden}
+.fault{display:grid;grid-template-columns:38px 1fr;gap:14px;background:var(--panel);padding:16px 18px}
+.fault b{
+  font-family:var(--mono);font-size:12px;font-weight:600;color:var(--warn);
+  letter-spacing:.04em;padding-top:3px;
+}
+.fault p{font-size:14.5px;line-height:1.6}
+.fault p em{font-style:normal;color:var(--fg-2)}
+.cap{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--fg-3);
+  margin-top:12px;text-align:center;
+}
+
+/* ---------- 원칙 ---------- */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:var(--line-2);border:1px solid var(--line-2);border-radius:3px;overflow:hidden}
+.rule{background:var(--panel);padding:22px 22px 24px;display:flex;flex-direction:column;gap:9px}
+.rule .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--accent)}
+.rule h3{font-size:17px}
+.rule p{font-size:14px;line-height:1.6;color:var(--fg-2)}
+
+/* ---------- 10종 갤러리 ---------- */
+.gallery{display:flex;flex-direction:column;gap:2px;background:var(--line-2);border:1px solid var(--line-2);border-radius:3px;overflow:hidden}
+.item{background:var(--panel);display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;padding:32px 34px}
+.item-body{display:flex;flex-direction:column;gap:16px;padding-top:4px;min-width:0}
+.item-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.item-title .no{
+  font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.06em;
+  color:var(--accent);
+}
+.item-title .en{font-family:var(--mono);font-size:12px;color:var(--fg-3);letter-spacing:.06em}
+.mech{
+  font-size:15.5px;line-height:1.62;color:var(--fg);
+  border-left:2px solid var(--accent);padding-left:14px;
+}
+dl.spec{display:grid;grid-template-columns:74px minmax(0,1fr);gap:9px 16px;margin:0;font-size:14px;line-height:1.6}
+dl.spec dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--fg-3);padding-top:4px}
+dl.spec dd{margin:0;color:var(--fg-2)}
+dl.spec dd b{color:var(--fg);font-weight:650}
+
+/* ---------- 그리드 시뮬 ---------- */
+.phone{
+  --t:124; /* 타일 한 변(px), 단위 없이 — scale 계산에 그대로 나눠 씀 */
+  width:calc(var(--t) * 3px + 24px);
+  margin:0 auto;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:10px;box-shadow:var(--shadow);
+}
+.phone-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:6px 8px 12px;font-family:var(--mono);font-size:11px;color:var(--fg-3);letter-spacing:.08em;
+}
+.ggrid{display:grid;grid-template-columns:repeat(3,calc(var(--t) * 1px));gap:2px}
+.ggrid .frame{
+  width:calc(var(--t) * 1px);
+  height:calc(var(--t) * 1.25px);
+  box-shadow:none;
+}
+.ggrid .cv{transform:scale(calc(var(--t) / 1080));transform-origin:top left}
+
+/* ---------- 운영 ---------- */
+.ops{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--line-2);border:1px solid var(--line-2);border-radius:3px;overflow:hidden}
+.op{background:var(--panel);padding:22px}
+.op h3{margin-bottom:12px;font-size:16px}
+.op ul{margin:0;padding-left:18px;font-size:14px;line-height:1.72;color:var(--fg-2)}
+.op li::marker{color:var(--fg-3)}
+.op ul b{color:var(--fg);font-weight:650}
+table.rot{width:100%;border-collapse:collapse;font-size:14px}
+table.rot th,table.rot td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-2)}
+table.rot th{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--fg-3);font-weight:600}
+table.rot td:first-child{font-family:var(--mono);color:var(--fg-2);white-space:nowrap}
+.tblwrap{overflow-x:auto}
+
+/* ---------- 스케일 ---------- */
+:root{--k:.34}
+@media (max-width:1000px){:root{--k:.30}}
+@media (max-width:860px){
+  .diag{grid-template-columns:1fr}
+  .item{grid-template-columns:1fr;gap:26px}
+  :root{--k:.34}
+}
+@media (max-width:520px){:root{--k:.26}}
+@media (max-width:420px){.phone{--t:96}}
+@media (prefers-reduced-motion:no-preference){
+  a{transition:color .15s ease}
+}
+a{color:var(--accent)}
+a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">carrygoseoul · 표지 리디자인 v1</p>
+  <h1>소싱레이더 표지 10종</h1>
+  <p class="lede">
+    지금 피드는 8장이 전부 같은 판형입니다. 사진 위 어두운 그라데이션, 민트 배지, 의문형 헤드라인, 8pt 출처줄.
+    문제는 못 만들어서가 아니라 <b>가장 강한 자산인 숫자가 가장 작은 줄에 들어가 있다</b>는 것입니다.
+    218억, 41배, 98위→72위 — 이 계정이 가진 유일한 무기를 지금은 각주로 쓰고 있습니다.
+    아래 10종은 그 숫자를 표지의 그림으로 끌어올리는 포맷들입니다.
+  </p>
+  <div class="hero-meta">
+    <span>1080 × 1350 · 4:5</span>
+    <span>그리드 썸네일 124px 기준 설계</span>
+    <span>Day 43–50 실제 데이터로 목업</span>
+  </div>
+</header>
+
+<!-- ================= 진단 ================= -->
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">01 — 진단</p>
+    <h2>왜 안 눌리는가</h2>
+    <p class="note">
+      현재 포맷을 그대로 재현했습니다. 텍스트 레이어가 배지·헤드라인·서브·출처 네 겹이고,
+      네 겹 모두 화면 아래 35% 안에 겹쳐 있습니다. 썸네일에서는 이 중 헤드라인 한 겹만 겨우 살아남고
+      나머지 세 겹은 회색 얼룩으로 남습니다.
+    </p>
+  </div>
+
+  <div class="diag">
+    <div>
+      <div class="frame">
+        <div class="cv" style="background:var(--ink)">
+          <!-- 현재 포맷 재현 -->
+          <div class="photo" style="position:absolute;inset:0"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,10,14,.94) 0%,rgba(8,10,14,.82) 26%,rgba(8,10,14,0) 52%)"></div>
+          <div style="position:absolute;left:64px;right:64px;bottom:96px;display:flex;flex-direction:column;gap:22px">
+            <div>
+              <span style="display:inline-block;background:#B9E8D6;color:#0C3B2E;font-family:var(--mono);font-size:26px;font-weight:600;padding:9px 18px;border-radius:6px;letter-spacing:-.01em">마켓레이더 오늘의 키워드 · 2026.08.17</span>
+            </div>
+            <p class="head" style="font-size:82px;color:#fff">요즘 왜 다들<br>얼굴을 감쌀까?</p>
+            <p class="sub" style="font-size:36px;color:#C9CDD4">햇빛가리개모자, 만원대로 얼굴·목까지</p>
+            <p style="font-family:var(--mono);font-size:22px;color:#7C838E;letter-spacing:.02em">네이버 데이터랩 쇼핑인사이트 · 패션잡화 인기검색어 162위 · 08.17</p>
+          </div>
+          <div class="safe-bl" style="background:rgba(228,43,21,.16);border-top:2px dashed rgba(228,43,21,.6);border-right:2px dashed rgba(228,43,21,.6)"></div>
+        </div>
+      </div>
+      <p class="cap">현재 포맷 재현 · 빨간 영역은 IG 조회수 배지가 덮는 자리</p>
+    </div>
+
+    <div class="faults">
+      <div class="fault"><b>F1</b><p><b>8장이 한 장으로 보인다.</b> <em>레이아웃·색·구도가 동일해서 8번 올려도 피드에서는 1회 노출로 처리됩니다. 새 글이 올라온 걸 팔로워가 인지하지 못합니다.</em></p></div>
+      <div class="fault"><b>F2</b><p><b>숫자가 각주에 있다.</b> <em>218억·41배·26계단이 22px 회색 출처줄에 들어갑니다. 클릭을 만드는 유일한 정보가 가장 안 보이는 자리입니다.</em></p></div>
+      <div class="fault"><b>F3</b><p><b>배지가 시선 1순위를 먹는다.</b> <em>민트 pill이 가장 밝고 가장 위에 있는데, 담고 있는 정보는 "오늘의 키워드"라는 상수입니다. 정보값 0의 요소가 최고 명도를 차지합니다.</em></p></div>
+      <div class="fault"><b>F4</b><p><b>헤드라인이 전부 의문형이다.</b> <em>"왜 뛰었지?" "진짜 최애템?" "왜 감쌀까?" — 같은 어미가 반복되면 궁금증이 아니라 광고 톤으로 읽힙니다.</em></p></div>
+      <div class="fault"><b>F5</b><p><b>사진이 썸네일에서 죽는다.</b> <em>124px로 줄면 인물 스톡컷은 베이지 얼룩입니다. 무엇을 파는 계정인지 그리드에서 판별되지 않습니다.</em></p></div>
+      <div class="fault"><b>F6</b><p><b>텍스트 4겹이 하단 35%에 몰려 있다.</b> <em>여백이 없으니 어느 것도 강조되지 않고, 조회수 배지까지 이 구간을 덮습니다.</em></p></div>
+      <div class="fault"><b>F7</b><p><b>카테고리 색 코드가 없다.</b> <em>뷰티·패션·리빙이 전부 같은 검정입니다. 그리드가 카테고리 지도로 기능하지 못합니다.</em></p></div>
+      <div class="fault"><b>F8</b><p><b>표지에서 정보를 다 준다.</b> <em>"만원대로 얼굴·목까지"까지 읽으면 넘길 이유가 사라집니다. 표지는 답이 아니라 구멍이어야 합니다.</em></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 원칙 ================= -->
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">02 — 원칙</p>
+    <h2>10종을 관통하는 규칙</h2>
+    <p class="note">개별 디자인보다 이 여섯 줄이 먼저입니다. 새 포맷을 추가하더라도 여기서 벗어나면 다시 지금 상태로 돌아갑니다.</p>
+  </div>
+  <div class="rules">
+    <div class="rule"><span class="k">R1</span><h3>124px에서 두 개만</h3><p>썸네일에서 읽혀야 할 요소는 최대 2개. 보통 숫자 하나 + 단어 하나입니다. 나머지는 전부 부차 정보로 내립니다.</p></div>
+    <div class="rule"><span class="k">R2</span><h3>숫자를 그림으로</h3><p>218억·41배·89위는 문장 안이 아니라 화면의 40% 이상을 차지하는 도형으로 씁니다. 사진보다 숫자가 강한 이미지입니다.</p></div>
+    <div class="rule"><span class="k">R3</span><h3>텍스트 3겹 이하</h3><p>아이브로우 / 주인공 / 한 줄. 출처·날짜·순위 근거는 표지에서 빼고 2번 슬라이드 상단으로 옮깁니다.</p></div>
+    <div class="rule"><span class="k">R4</span><h3>사진은 조연이거나 없음</h3><p>사진을 쓸 때는 배경이 아니라 화면의 절반을 명확히 점유하는 블록으로. 텍스트를 사진 위에 얹지 않습니다.</p></div>
+    <div class="rule"><span class="k">R5</span><h3>표지는 답이 아니라 구멍</h3><p>결론을 표지에서 완성하지 않습니다. 최소 한 개 값을 가리거나 비워서 스와이프할 이유를 남깁니다.</p></div>
+    <div class="rule"><span class="k">R6</span><h3>같은 포맷 3연속 금지</h3><p>10종을 데이터 모양에 따라 돌려 씁니다. 연속 두 장이 같은 포맷이면 발행 전에 하나를 교체합니다.</p></div>
+  </div>
+</section>
+
+<!-- ================= 10종 ================= -->
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">03 — 표지 10종</p>
+    <h2>포맷과, 그 포맷이 붙는 데이터 모양</h2>
+    <p class="note">
+      10종은 취향의 나열이 아니라 리포트가 이미 만들어내는 10가지 데이터 모양에 각각 대응합니다.
+      매일 아침 "오늘 데이터가 무슨 모양인가"만 판정하면 표지 포맷이 자동으로 정해집니다.
+      회색 빗금은 실제 사진이 들어갈 자리입니다.
+    </p>
+  </div>
+
+  <div class="gallery">
+
+    <!-- 01 넘버 폭탄 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--ink);color:var(--paper)">
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:space-between">
+            <p class="cv-eyebrow" style="color:var(--signal)">국립중앙박물관 굿즈</p>
+            <div style="margin-top:-40px">
+              <p class="huge" style="font-size:360px;color:var(--paper)">218<span style="font-size:200px;letter-spacing:-.02em">억</span></p>
+              <p class="head" style="font-size:64px;margin-top:44px;color:var(--paper)">상반기에만 팔린 금액</p>
+            </div>
+            <p class="sub" style="font-size:38px;color:var(--smoke)">전년 대비 90% 증가</p>
+          </div>
+          <div class="cv-mark" style="color:var(--paper)">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">01</span><h3>넘버 폭탄</h3><span class="en">NUMBER BOMB</span></div>
+        <p class="mech">숫자 하나를 화면의 절반까지 키우고, 그 숫자가 무슨 숫자인지는 위아래 한 줄씩으로만 설명합니다. 썸네일에서 "218억"만 읽혀도 성공입니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd>매출액·증가율·배수처럼 <b>절대값이 센 숫자</b>가 하나 나온 날. 218억, 41배, 26배 가격 격차.</dd>
+          <dt>후킹 축</dt><dd>규모 충격. 해석 없이도 크기가 먼저 전달됩니다.</dd>
+          <dt>제작</dt><dd>숫자 360px / 단위 200px / 자간 −.055em. 사진 없음. 아이브로우에 반드시 <b>대상</b>을 박아 숫자의 주어를 잃지 않게 합니다.</dd>
+          <dt>주의</dt><dd>3연속 쓰면 무뎌집니다. 주 2회까지.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 02 랭크 점프 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--cobalt);color:#fff">
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:space-between">
+            <p class="cv-eyebrow" style="color:rgba(255,255,255,.72)">키보드 키캡 키링 · 쇼핑 검색</p>
+            <div>
+              <div style="display:flex;align-items:baseline;gap:30px">
+                <span class="huge" style="font-size:150px;color:rgba(255,255,255,.42);text-decoration:line-through;text-decoration-thickness:9px">98위</span>
+              </div>
+              <p class="huge" style="font-size:280px;color:#fff;margin-top:18px">72<span style="font-size:150px">위</span></p>
+              <div style="display:flex;align-items:flex-end;gap:10px;height:200px;margin-top:56px">
+                <div style="width:74px;height:36%;background:rgba(255,255,255,.28)"></div>
+                <div style="width:74px;height:30%;background:rgba(255,255,255,.28)"></div>
+                <div style="width:74px;height:48%;background:rgba(255,255,255,.28)"></div>
+                <div style="width:74px;height:64%;background:rgba(255,255,255,.4)"></div>
+                <div style="width:74px;height:100%;background:var(--signal)"></div>
+              </div>
+            </div>
+            <p class="head" style="font-size:56px">나흘 만에 26계단</p>
+          </div>
+          <div class="cv-mark" style="color:#fff">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">02</span><h3>랭크 점프</h3><span class="en">RANK JUMP</span></div>
+        <p class="mech">취소선 친 옛 순위와 거대한 현재 순위, 그리고 마지막 막대만 노란색인 계단 차트. 움직임 자체가 그림이 됩니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd><b>순위 변동폭이 두 자리</b>인 날. 98→72, 75→17처럼 계단 수가 말이 되는 경우.</dd>
+          <dt>후킹 축</dt><dd>속도. "며칠 만에"가 붙으면 지금 안 보면 늦는다는 감각이 생깁니다.</dd>
+          <dt>제작</dt><dd>막대는 항상 5개(4주 추이+오늘), 마지막 하나만 시그널 옐로우. 상승은 코발트, 하락은 잉크+레드로 색만 교체해 같은 판형을 재사용합니다.</dd>
+          <dt>확장</dt><dd>하락 버전은 "왜 빠졌나" 리포트에 그대로 씁니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 03 블랭크 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--paper);color:var(--ink)">
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:52px">
+            <p class="cv-eyebrow" style="color:var(--alert)">패션의류 24위 · 감탄브라</p>
+            <div>
+              <p class="head" style="font-size:88px">네이버에서 24위인 이 키워드,</p>
+              <p class="head" style="font-size:88px;margin-top:16px">M몰 검색결과는</p>
+              <div style="display:flex;align-items:center;gap:26px;margin-top:40px">
+                <div style="width:250px;height:170px;background:var(--ink);display:flex;align-items:center;justify-content:center">
+                  <span style="color:var(--signal);font-size:120px;font-weight:900">?</span>
+                </div>
+                <span class="huge" style="font-size:130px">개</span>
+              </div>
+            </div>
+            <p class="sub" style="font-size:40px;color:#6C6459">넘겨서 확인 →</p>
+          </div>
+          <div class="cv-mark" style="color:var(--ink)">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">03</span><h3>빈칸</h3><span class="en">BLANK</span></div>
+        <p class="mech">문장을 완성하지 않고 핵심 값 자리에 검은 블록을 놓습니다. 답이 "0개"라는 걸 아는 순간이 2번 슬라이드에서 발생하도록 미룹니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd>수요는 있는데 <b>M몰 상품 수가 0개거나 한 자릿수</b>인 날. 감탄브라 0개, 멜라논크림 0개, 카프리팬츠 2개.</dd>
+          <dt>후킹 축</dt><dd>미완결. 사람은 빈칸을 보면 채우고 싶어 합니다. 스와이프율을 직접 올리는 유일한 포맷입니다.</dd>
+          <dt>제작</dt><dd>블록은 반드시 잉크 단색 + 노란 물음표. 흐림 처리(blur)는 쓰지 않습니다 — 썸네일에서 그냥 흐린 사진으로 보입니다.</dd>
+          <dt>주의</dt><dd>2번 슬라이드 첫 줄에 답을 즉시 줍니다. 두 번 이상 끌면 이탈합니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 04 경보 스탬프 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--alert);color:#fff">
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:space-between">
+            <p class="cv-eyebrow" style="color:rgba(255,255,255,.8)">패션잡화 75위 → 17위</p>
+            <div style="position:relative">
+              <div style="display:inline-block;border:14px solid #fff;padding:16px 46px 30px;transform:rotate(-6deg)">
+                <span style="font-size:210px;font-weight:900;letter-spacing:-.04em;line-height:1;color:#fff">품절</span>
+              </div>
+              <p class="head" style="font-size:80px;margin-top:70px">발가락양말이<br>진짜로 동났습니다</p>
+            </div>
+            <p class="sub" style="font-size:38px;color:rgba(255,255,255,.85)">검색 41배 · 고윤정·박진영 착용 이후</p>
+          </div>
+          <div class="cv-mark" style="color:#fff">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">04</span><h3>경보 스탬프</h3><span class="en">RED ALERT</span></div>
+        <p class="mech">전면 레드에 도장처럼 찍은 두 글자. 썸네일 그리드에서 유일하게 빨간 타일이라 시선이 먼저 꽂힙니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd><b>품절·완판·재입고·가격 인상</b>처럼 시간 제약이 실제로 존재하는 날에만.</dd>
+          <dt>후킹 축</dt><dd>긴급성. 다만 근거 없이 쓰면 계정 신뢰가 바로 깎입니다.</dd>
+          <dt>제작</dt><dd>두 글자(품절/완판/급등) 고정. −6° 회전, 흰 테두리 14px. 사진 없음.</dd>
+          <dt>주의</dt><dd><b>월 2회 상한.</b> 이 포맷의 힘은 희소성에서 나옵니다. 남발하면 그리드가 세일 전단이 됩니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 05 대결 스플릿 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--ink)">
+          <div style="position:absolute;inset:0;display:flex">
+            <div style="flex:1;position:relative;background:var(--teal)">
+              <div class="photo" style="position:absolute;inset:0;opacity:.5"></div>
+              <div style="position:absolute;left:56px;bottom:300px">
+                <p class="head" style="font-size:66px;color:rgba(255,255,255,.62);text-decoration:line-through;text-decoration-thickness:7px">선크림</p>
+                <p class="cv-eyebrow" style="color:rgba(255,255,255,.6);margin-top:16px">7월까지</p>
+              </div>
+            </div>
+            <div style="flex:1;position:relative;background:var(--ink-2)">
+              <div class="photo" style="position:absolute;inset:0;opacity:.5"></div>
+              <div style="position:absolute;left:56px;bottom:300px">
+                <p class="head" style="font-size:78px;color:#fff">멜라논<br>크림</p>
+                <p class="cv-eyebrow" style="color:var(--signal);margin-top:16px">지금 89위 신규</p>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute;left:50%;top:620px;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:50%;background:var(--signal);display:flex;align-items:center;justify-content:center">
+            <span style="font-size:66px;font-weight:900;color:var(--ink);letter-spacing:-.03em">다음</span>
+          </div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:0 56px 156px;background:linear-gradient(to top,rgba(8,10,14,.95) 40%,rgba(8,10,14,0))">
+            <p class="sub" style="font-size:44px;color:#fff;padding-top:120px">자외선이 끝나면 색소가 옵니다</p>
+          </div>
+          <div class="cv-mark" style="color:#fff">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">05</span><h3>대결 스플릿</h3><span class="en">A / B</span></div>
+        <p class="mech">화면을 반으로 갈라 지는 쪽과 뜨는 쪽을 나란히 둡니다. 취소선 하나로 "끝났다 → 다음은 이것"이라는 서사가 한 장에 들어갑니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd>수요가 <b>한 키워드에서 다른 키워드로 이동</b>한 날. 선크림→멜라논크림, 가디건→얇은 셔츠.</dd>
+          <dt>후킹 축</dt><dd>승계 서사. 이미 아는 것(선크림)이 미끼가 되어 모르는 것(멜라논크림)을 물게 합니다.</dd>
+          <dt>제작</dt><dd>사진 두 장 필수 — 이 포맷은 10종 중 사진을 가장 적극적으로 쓰는 유일한 판형입니다. 다만 텍스트는 사진 위가 아니라 색면 위에 올립니다.</dd>
+          <dt>확장</dt><dd>노란 원의 글자만 바꿔 "vs / 대신 / 다음"으로 변주합니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 06 컷아웃 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--signal);color:var(--ink)">
+          <div class="pad" style="position:relative;z-index:2">
+            <p class="cv-eyebrow" style="color:#7A6600">쿠팡 · 2026.08.16</p>
+            <p class="head" style="font-size:104px;margin-top:30px">신발을<br>매일 갈아입힌다</p>
+            <p class="sub" style="font-size:42px;margin-top:34px;color:#5F5100;max-width:700px">젤리슈즈에 진주·리본 파츠를 다는 사람들</p>
+          </div>
+          <div style="position:absolute;right:-90px;bottom:-110px;width:820px;height:820px;border-radius:50%;overflow:hidden">
+            <div class="photo" style="position:absolute;inset:0;background-color:#2E3239"></div>
+          </div>
+          <div class="cv-mark" style="color:#7A6600">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">06</span><h3>컷아웃</h3><span class="en">CUTOUT</span></div>
+        <p class="mech">단색 형광 배경에 누끼 딴 제품 하나. 텍스트는 사진과 겹치지 않게 위쪽에 배치합니다. 그리드에서 가장 밝은 타일이 됩니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd><b>제품 형태가 곧 설명</b>인 날. 젤리슈즈 파츠, 키캡 키링, 옥반지처럼 생김새가 낯설고 눈에 걸리는 물건.</dd>
+          <dt>후킹 축</dt><dd>사물 호기심. 숫자가 약한 날의 구원 포맷입니다.</dd>
+          <dt>제작</dt><dd>배경은 시그널 옐로우 / 코발트 / 페이퍼 중 카테고리 색으로. 누끼 원형 지름 820px, 오른쪽 아래로 화면 밖까지 흘려보내 잘리게 둡니다.</dd>
+          <dt>주의</dt><dd>누끼가 지저분하면 이 포맷은 성립하지 않습니다. 배경 제거가 깨끗한 컷이 없으면 05나 08로 대체합니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 07 리스트 티저 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--ink);color:var(--paper)">
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;gap:44px">
+            <div>
+              <p class="cv-eyebrow" style="color:var(--signal)">화장품/미용 · 100위권 신규</p>
+              <p class="head" style="font-size:88px;margin-top:26px">이번 주 처음<br>들어온 키워드 5</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:22px;flex:1;justify-content:space-between;font-variant-numeric:tabular-nums">
+              <div style="display:flex;align-items:baseline;gap:26px;border-bottom:2px solid rgba(237,233,225,.16);padding-bottom:18px">
+                <span class="mono" style="font-size:32px;color:var(--smoke)">01</span>
+                <span style="font-size:52px;font-weight:800;letter-spacing:-.03em">멜라논크림</span>
+                <span class="mono" style="font-size:34px;color:var(--signal);margin-left:auto">89위</span>
+              </div>
+              <div style="display:flex;align-items:baseline;gap:26px;border-bottom:2px solid rgba(237,233,225,.16);padding-bottom:18px">
+                <span class="mono" style="font-size:32px;color:var(--smoke)">02</span>
+                <span style="font-size:52px;font-weight:800;letter-spacing:-.03em">트리코닉스샴푸</span>
+                <span class="mono" style="font-size:34px;color:var(--signal);margin-left:auto">95위</span>
+              </div>
+              <div style="display:flex;align-items:baseline;gap:26px;border-bottom:2px solid rgba(237,233,225,.16);padding-bottom:18px">
+                <span class="mono" style="font-size:32px;color:var(--smoke)">03</span>
+                <span style="font-size:52px;font-weight:800;letter-spacing:-.03em">향수공병</span>
+                <span class="mono" style="font-size:34px;color:var(--signal);margin-left:auto">155위</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:26px;padding-bottom:8px">
+                <span class="mono" style="font-size:32px;color:var(--smoke)">04</span>
+                <div style="height:52px;flex:1;background:var(--signal);opacity:.9"></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:26px">
+                <span class="mono" style="font-size:32px;color:var(--smoke)">05</span>
+                <div style="height:52px;width:62%;background:var(--signal);opacity:.9"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cv-mark" style="color:var(--paper)">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">07</span><h3>리스트 티저</h3><span class="en">LIST TEASER</span></div>
+        <p class="mech">5개 중 3개만 보여주고 나머지 두 줄은 노란 막대로 덮습니다. 덮인 자리가 남아 있어야 넘깁니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd>하나가 아니라 <b>여러 개가 동시에 들어온 날</b>. 신규 진입 3건 이상, 주간 정리 회차.</dd>
+          <dt>후킹 축</dt><dd>목록 완성 욕구 + 저장 유인. 10종 중 저장률이 가장 높게 나오는 포맷입니다.</dd>
+          <dt>제작</dt><dd>항상 5줄. 3줄 공개 / 2줄 마스킹 고정. 순위는 오른쪽 정렬 + tabular-nums로 숫자 기둥을 맞춥니다.</dd>
+          <dt>확장</dt><dd>월말 "이번 달 신규 20"으로 확장하면 아카이브 콘텐츠가 됩니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 08 속보 티커 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--paper);color:var(--ink)">
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
+            <div style="display:flex;align-items:center;gap:20px">
+              <span style="background:var(--alert);color:#fff;font-size:38px;font-weight:900;padding:10px 24px;letter-spacing:-.02em">속보</span>
+              <span class="mono" style="font-size:30px;color:#6C6459;letter-spacing:.08em">2026.08.17 09:00 KST</span>
+            </div>
+            <p class="head" style="font-size:92px">기미크림 두 개가<br>같은 날 100위 안에</p>
+            <div style="background:var(--ink);color:var(--paper);padding:30px 34px;display:flex;flex-direction:column;gap:14px">
+              <p class="mono" style="font-size:30px;color:var(--signal);letter-spacing:.1em">FIRST OBSERVED</p>
+              <p class="mono" style="font-size:34px;line-height:1.5">멜라논크림 89 · 동아제약멜라논크림 94<br>트리코닉스샴푸 95</p>
+            </div>
+          </div>
+          <div style="height:96px;background:var(--ink);display:flex;align-items:center;overflow:hidden">
+            <p class="mono" style="font-size:28px;color:var(--smoke);white-space:nowrap;padding-left:290px;letter-spacing:.06em">화장품/미용 첫 Top500 수집 · 100위 아래 377개는 판정 보류 · 다음 회차 비교 기준점</p>
+          </div>
+          <div class="cv-mark" style="color:var(--smoke);bottom:118px">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">08</span><h3>속보 티커</h3><span class="en">BREAKING</span></div>
+        <p class="mech">뉴스 화면 문법을 그대로 빌립니다. 레드 태그 + 타임스탬프 + 하단 티커. 광고가 아니라 보도로 읽히게 만드는 포맷입니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd><b>신규 진입 🆕</b>이 붙은 날, 신제품 출시일이 확인된 날. 오늘 처음 관측된 사실이 있을 때만.</dd>
+          <dt>후킹 축</dt><dd>선점 정보. "나만 아직 모르나"를 건드립니다.</dd>
+          <dt>제작</dt><dd>타임스탬프는 반드시 실제 수집 시각. 하단 티커에 판정 보류·한계를 적어두면 신뢰가 올라갑니다 — 리포트의 기준메모가 그대로 자산이 됩니다.</dd>
+          <dt>주의</dt><dd>확정 안 된 신호에 "속보"를 붙이지 않습니다. 이 계정의 차별점은 근거이지 속도가 아닙니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 09 MD 인용 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--teal);color:#fff">
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:space-between">
+            <p style="font-size:230px;font-weight:900;line-height:.6;color:rgba(255,255,255,.28);height:130px">&ldquo;</p>
+            <div>
+              <p class="head" style="font-size:76px">지금은 대량 소싱보다<br>기장과 핏을 소수로<br>검증할 때입니다</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:26px">
+              <div class="photo" style="width:110px;height:110px;border-radius:50%;background-color:#0A5A51;flex:none"></div>
+              <div>
+                <p class="sub" style="font-size:36px;font-weight:700">M몰 소싱 MD</p>
+                <p class="mono" style="font-size:28px;color:rgba(255,255,255,.66);margin-top:8px">Day 43 · 패션의류 · 카프리팬츠</p>
+              </div>
+            </div>
+          </div>
+          <div class="cv-mark" style="color:#fff">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">09</span><h3>MD 인용</h3><span class="en">QUOTE</span></div>
+        <p class="mech">MD의 판단 문장을 그대로 주인공으로 씁니다. 이 계정이 정보 요약 계정이 아니라 <b>판단하는 사람이 있는 계정</b>이라는 걸 보여주는 유일한 포맷입니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd>숫자보다 <b>해석이 센 날</b>. "화제성은 큰데 실제 구매는 아니다" 같은 역방향 판단이 있는 날.</dd>
+          <dt>후킹 축</dt><dd>권위와 내부자 시점. 팔로우 전환율이 가장 높은 포맷입니다.</dd>
+          <dt>제작</dt><dd>인용문은 <b>25자 이내 3줄</b>. 리포트 MD 코멘트에서 그대로 잘라 씁니다 — 새로 쓰지 않습니다.</dd>
+          <dt>확장</dt><dd>같은 판형에 "제외" 판단을 넣으면 더 셉니다. 안 사도 된다고 말하는 계정은 드뭅니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 10 판정 카드 -->
+    <div class="item">
+      <div class="frame">
+        <div class="cv" style="background:var(--paper);color:var(--ink)">
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;gap:40px">
+            <div>
+              <p class="cv-eyebrow" style="color:#6C6459">Day 43 · 패션의류</p>
+              <p class="head" style="font-size:96px;margin-top:24px">오늘의 소싱 판정</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:20px">
+              <div style="background:var(--teal);color:#fff;padding:28px 32px;display:flex;flex-direction:column;gap:10px">
+                <p class="mono" style="font-size:28px;letter-spacing:.12em;color:var(--signal)">우선 검토</p>
+                <p style="font-size:50px;font-weight:800;letter-spacing:-.03em">감탄브라 · 버뮤다팬츠</p>
+              </div>
+              <div style="background:#DAD5CB;color:#6C6459;padding:28px 32px;display:flex;flex-direction:column;gap:10px">
+                <p class="mono" style="font-size:28px;letter-spacing:.12em">보류</p>
+                <p style="font-size:50px;font-weight:800;letter-spacing:-.03em">5개 키워드</p>
+              </div>
+              <div style="background:var(--ink);color:#fff;padding:28px 32px;display:flex;flex-direction:column;gap:10px">
+                <p class="mono" style="font-size:28px;letter-spacing:.12em;color:var(--alert)">제외</p>
+                <div style="display:flex;gap:14px;align-items:center">
+                  <div style="height:50px;width:300px;background:var(--alert)"></div>
+                  <div style="height:50px;width:190px;background:var(--alert)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cv-mark" style="color:#6C6459">CARRYGO</div>
+        </div>
+      </div>
+      <div class="item-body">
+        <div class="item-title"><span class="no">10</span><h3>판정 카드</h3><span class="en">VERDICT</span></div>
+        <p class="mech">리포트의 MD 판단(우선검토·보류·제외) 세 줄을 그대로 표지로 올리되, 제외 줄만 가립니다. "뭐가 잘렸는지"가 스와이프 동기입니다.</p>
+        <dl class="spec">
+          <dt>쓰는 날</dt><dd>판정이 <b>세 등급으로 깔끔하게 갈린 날</b>. 특히 제외 항목이 의외일 때.</dd>
+          <dt>후킹 축</dt><dd>결론 선공개. 정보가 아니라 결정을 파는 포맷이라 MD·셀러 팔로워에게 강합니다.</dd>
+          <dt>제작</dt><dd>색은 항상 고정 — 우선검토=틸, 보류=회베이지, 제외=잉크+레드. 세 등급의 색이 매번 같아야 그리드에서 학습됩니다.</dd>
+          <dt>확장</dt><dd>주간 회차에서 "지난주 판정 결과 확인"으로 이어붙이면 연재가 됩니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 그리드 시뮬 ================= -->
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">04 — 검증</p>
+    <h2>그리드에서 실제로 이렇게 보입니다</h2>
+    <p class="note">
+      아래는 실제 인스타그램 프로필 그리드 크기(타일 124px)로 축소한 화면입니다.
+      판단 기준은 하나입니다 — <b>이 크기에서 각 타일이 서로 다른 것으로 보이는가, 그리고 무언가 하나는 읽히는가.</b>
+      현재 포맷은 이 크기에서 8장이 같은 회색 덩어리였습니다.
+    </p>
+  </div>
+
+  <div class="phone">
+    <div class="phone-bar"><span>carrygoseoul</span><span>게시물 124px</span></div>
+    <div class="ggrid">
+      <!-- 1 넘버 -->
+      <div class="frame"><div class="cv" style="background:var(--ink);color:var(--paper)">
+        <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:space-between">
+          <p class="cv-eyebrow" style="color:var(--signal)">국립중앙박물관 굿즈</p>
+          <div style="margin-top:-40px"><p class="huge" style="font-size:360px">218<span style="font-size:200px">억</span></p><p class="head" style="font-size:64px;margin-top:44px">상반기에만 팔린 금액</p></div>
+          <p class="sub" style="font-size:38px;color:var(--smoke)">전년 대비 90% 증가</p>
+        </div></div></div>
+      <!-- 2 랭크 -->
+      <div class="frame"><div class="cv" style="background:var(--cobalt);color:#fff">
+        <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:space-between">
+          <p class="cv-eyebrow" style="color:rgba(255,255,255,.72)">키캡 키링</p>
+          <div><span class="huge" style="font-size:150px;color:rgba(255,255,255,.42);text-decoration:line-through;text-decoration-thickness:9px">98위</span>
+          <p class="huge" style="font-size:280px;margin-top:18px">72<span style="font-size:150px">위</span></p>
+          <div style="display:flex;align-items:flex-end;gap:10px;height:200px;margin-top:56px">
+            <div style="width:74px;height:36%;background:rgba(255,255,255,.28)"></div><div style="width:74px;height:30%;background:rgba(255,255,255,.28)"></div><div style="width:74px;height:48%;background:rgba(255,255,255,.28)"></div><div style="width:74px;height:64%;background:rgba(255,255,255,.4)"></div><div style="width:74px;height:100%;background:var(--signal)"></div>
+          </div></div>
+          <p class="head" style="font-size:56px">나흘 만에 26계단</p>
+        </div></div></div>
+      <!-- 3 블랭크 -->
+      <div class="frame"><div class="cv" style="background:var(--paper);color:var(--ink)">
+        <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:52px">
+          <p class="cv-eyebrow" style="color:var(--alert)">감탄브라 24위</p>
+          <div><p class="head" style="font-size:88px">M몰 검색결과는</p>
+          <div style="display:flex;align-items:center;gap:26px;margin-top:40px">
+            <div style="width:250px;height:170px;background:var(--ink);display:flex;align-items:center;justify-content:center"><span style="color:var(--signal);font-size:120px;font-weight:900">?</span></div>
+            <span class="huge" style="font-size:130px">개</span></div></div>
+          <p class="sub" style="font-size:40px;color:#6C6459">넘겨서 확인 →</p>
+        </div></div></div>
+      <!-- 4 경보 -->
+      <div class="frame"><div class="cv" style="background:var(--alert);color:#fff">
+        <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:space-between">
+          <p class="cv-eyebrow" style="color:rgba(255,255,255,.8)">75위 → 17위</p>
+          <div><div style="display:inline-block;border:14px solid #fff;padding:16px 46px 30px;transform:rotate(-6deg)"><span style="font-size:210px;font-weight:900;line-height:1">품절</span></div>
+          <p class="head" style="font-size:80px;margin-top:70px">발가락양말이<br>진짜로 동났습니다</p></div>
+          <p class="sub" style="font-size:38px;color:rgba(255,255,255,.85)">검색 41배</p>
+        </div></div></div>
+      <!-- 5 스플릿 -->
+      <div class="frame"><div class="cv" style="background:var(--ink)">
+        <div style="position:absolute;inset:0;display:flex">
+          <div style="flex:1;position:relative;background:var(--teal)"><div class="photo" style="position:absolute;inset:0;opacity:.5"></div>
+            <div style="position:absolute;left:56px;bottom:300px"><p class="head" style="font-size:66px;color:rgba(255,255,255,.62);text-decoration:line-through;text-decoration-thickness:7px">선크림</p></div></div>
+          <div style="flex:1;position:relative;background:var(--ink-2)"><div class="photo" style="position:absolute;inset:0;opacity:.5"></div>
+            <div style="position:absolute;left:56px;bottom:300px"><p class="head" style="font-size:78px;color:#fff">멜라논<br>크림</p></div></div>
+        </div>
+        <div style="position:absolute;left:50%;top:620px;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:50%;background:var(--signal);display:flex;align-items:center;justify-content:center"><span style="font-size:66px;font-weight:900;color:var(--ink)">다음</span></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:0 56px 156px;background:linear-gradient(to top,rgba(8,10,14,.95) 40%,rgba(8,10,14,0))"><p class="sub" style="font-size:44px;color:#fff;padding-top:120px">자외선 다음은 색소입니다</p></div>
+      </div></div>
+      <!-- 6 컷아웃 -->
+      <div class="frame"><div class="cv" style="background:var(--signal);color:var(--ink)">
+        <div class="pad" style="position:relative;z-index:2">
+          <p class="cv-eyebrow" style="color:#7A6600">쿠팡 · 08.16</p>
+          <p class="head" style="font-size:104px;margin-top:30px">신발을<br>매일 갈아입힌다</p>
+          <p class="sub" style="font-size:42px;margin-top:34px;color:#5F5100">젤리슈즈 파츠</p></div>
+        <div style="position:absolute;right:-90px;bottom:-110px;width:820px;height:820px;border-radius:50%;overflow:hidden"><div class="photo" style="position:absolute;inset:0;background-color:#2E3239"></div></div>
+      </div></div>
+      <!-- 7 리스트 -->
+      <div class="frame"><div class="cv" style="background:var(--ink);color:var(--paper)">
+        <div class="pad" style="flex:1;display:flex;flex-direction:column;gap:44px">
+          <div><p class="cv-eyebrow" style="color:var(--signal)">화장품/미용 신규</p><p class="head" style="font-size:88px;margin-top:26px">이번 주 처음<br>들어온 키워드 5</p></div>
+          <div style="display:flex;flex-direction:column;gap:22px;flex:1;justify-content:space-between">
+            <div style="display:flex;align-items:baseline;gap:26px;border-bottom:2px solid rgba(237,233,225,.16);padding-bottom:18px"><span class="mono" style="font-size:32px;color:var(--smoke)">01</span><span style="font-size:52px;font-weight:800">멜라논크림</span><span class="mono" style="font-size:34px;color:var(--signal);margin-left:auto">89위</span></div>
+            <div style="display:flex;align-items:baseline;gap:26px;border-bottom:2px solid rgba(237,233,225,.16);padding-bottom:18px"><span class="mono" style="font-size:32px;color:var(--smoke)">02</span><span style="font-size:52px;font-weight:800">트리코닉스샴푸</span><span class="mono" style="font-size:34px;color:var(--signal);margin-left:auto">95위</span></div>
+            <div style="display:flex;align-items:baseline;gap:26px;border-bottom:2px solid rgba(237,233,225,.16);padding-bottom:18px"><span class="mono" style="font-size:32px;color:var(--smoke)">03</span><span style="font-size:52px;font-weight:800">향수공병</span><span class="mono" style="font-size:34px;color:var(--signal);margin-left:auto">155위</span></div>
+            <div style="display:flex;align-items:center;gap:26px"><span class="mono" style="font-size:32px;color:var(--smoke)">04</span><div style="height:52px;flex:1;background:var(--signal)"></div></div>
+            <div style="display:flex;align-items:center;gap:26px"><span class="mono" style="font-size:32px;color:var(--smoke)">05</span><div style="height:52px;width:62%;background:var(--signal)"></div></div>
+          </div></div></div></div>
+      <!-- 8 속보 -->
+      <div class="frame"><div class="cv" style="background:var(--paper);color:var(--ink)">
+        <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
+          <div style="display:flex;align-items:center;gap:20px"><span style="background:var(--alert);color:#fff;font-size:38px;font-weight:900;padding:10px 24px">속보</span><span class="mono" style="font-size:30px;color:#6C6459">08.17 09:00</span></div>
+          <p class="head" style="font-size:92px">기미크림 두 개가<br>같은 날 100위 안에</p>
+          <div style="background:var(--ink);color:var(--paper);padding:30px 34px"><p class="mono" style="font-size:30px;color:var(--signal);letter-spacing:.1em">FIRST OBSERVED</p><p class="mono" style="font-size:34px;line-height:1.5;margin-top:14px">멜라논크림 89 · 트리코닉스 95</p></div>
+        </div>
+        <div style="height:96px;background:var(--ink)"></div></div></div>
+      <!-- 9 인용 -->
+      <div class="frame"><div class="cv" style="background:var(--teal);color:#fff">
+        <div class="pad" style="flex:1;display:flex;flex-direction:column;justify-content:space-between">
+          <p style="font-size:230px;font-weight:900;line-height:.6;color:rgba(255,255,255,.28);height:130px">&ldquo;</p>
+          <p class="head" style="font-size:76px">지금은 대량 소싱보다<br>기장과 핏을 소수로<br>검증할 때입니다</p>
+          <div style="display:flex;align-items:center;gap:26px"><div class="photo" style="width:110px;height:110px;border-radius:50%;background-color:#0A5A51;flex:none"></div><div><p class="sub" style="font-size:36px;font-weight:700">M몰 소싱 MD</p></div></div>
+        </div></div></div>
+      <!-- 10 판정 -->
+      <div class="frame"><div class="cv" style="background:var(--paper);color:var(--ink)">
+        <div class="pad" style="flex:1;display:flex;flex-direction:column;gap:40px">
+          <div><p class="cv-eyebrow" style="color:#6C6459">Day 43 · 패션의류</p><p class="head" style="font-size:96px;margin-top:24px">오늘의 소싱 판정</p></div>
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="background:var(--teal);color:#fff;padding:28px 32px"><p class="mono" style="font-size:28px;color:var(--signal);letter-spacing:.12em">우선 검토</p><p style="font-size:50px;font-weight:800;margin-top:10px">감탄브라 · 버뮤다팬츠</p></div>
+            <div style="background:#DAD5CB;color:#6C6459;padding:28px 32px"><p class="mono" style="font-size:28px;letter-spacing:.12em">보류</p><p style="font-size:50px;font-weight:800;margin-top:10px">5개 키워드</p></div>
+            <div style="background:var(--ink);color:#fff;padding:28px 32px"><p class="mono" style="font-size:28px;color:var(--alert);letter-spacing:.12em">제외</p><div style="display:flex;gap:14px;margin-top:10px"><div style="height:50px;width:300px;background:var(--alert)"></div><div style="height:50px;width:190px;background:var(--alert)"></div></div></div>
+          </div></div></div></div>
+    </div>
+  </div>
+  <p class="cap" style="max-width:390px;margin:14px auto 0">10개 타일이 색·구도·무게중심에서 서로 다릅니다. 이것이 8장 연속 노출을 8회로 만드는 조건입니다.</p>
+</section>
+
+<!-- ================= 운영 ================= -->
+<section style="border-bottom:none">
+  <div class="sec-head">
+    <p class="eyebrow">05 — 운영</p>
+    <h2>내일 아침부터 돌리는 법</h2>
+    <p class="note">디자인이 10종인 게 중요한 게 아니라, 매일 아침 어떤 포맷을 쓸지 <b>고민 없이 결정되는 것</b>이 중요합니다. 리포트가 이미 만들어내는 값으로 자동 분기시킵니다.</p>
+  </div>
+
+  <div class="tblwrap" style="border:1px solid var(--line);border-radius:3px;background:var(--panel);padding:6px 18px 10px;margin-bottom:2px">
+    <table class="rot">
+      <thead><tr><th>리포트에 이 값이 있으면</th><th>표지 포맷</th><th>표지에 올릴 주인공</th></tr></thead>
+      <tbody>
+        <tr><td>매출액·증가율·배수</td><td>01 넘버 폭탄</td><td>숫자 하나</td></tr>
+        <tr><td>순위 변동 두 자리</td><td>02 랭크 점프</td><td>도착 순위 + 계단 수</td></tr>
+        <tr><td>M몰 상품수 0~9개</td><td>03 빈칸</td><td>가려진 개수</td></tr>
+        <tr><td>품절·완판·가격 인상</td><td>04 경보 스탬프</td><td>두 글자</td></tr>
+        <tr><td>수요 이동(A→B)</td><td>05 대결 스플릿</td><td>지는 쪽 / 뜨는 쪽</td></tr>
+        <tr><td>생김새가 낯선 제품</td><td>06 컷아웃</td><td>누끼 컷</td></tr>
+        <tr><td>신규 진입 3건 이상</td><td>07 리스트 티저</td><td>3줄 공개 + 2줄 마스킹</td></tr>
+        <tr><td>🆕 첫 관측 / 출시일 확인</td><td>08 속보 티커</td><td>타임스탬프</td></tr>
+        <tr><td>역방향 판단·해석이 셀 때</td><td>09 MD 인용</td><td>25자 이내 문장</td></tr>
+        <tr><td>판정 3등급이 갈릴 때</td><td>10 판정 카드</td><td>가려진 제외 항목</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ops">
+    <div class="op">
+      <h3>제작 스펙</h3>
+      <ul>
+        <li>캔버스 <b>1080 × 1350</b>, 안전 여백 74px</li>
+        <li>좌하단 <b>250×110</b>은 비움 — 조회수 배지가 덮습니다</li>
+        <li>우상단 <b>150×150</b>도 비움 — 캐러셀 아이콘 자리</li>
+        <li>표지 텍스트 레이어 <b>최대 3겹</b></li>
+        <li>출처·날짜·근거는 <b>2번 슬라이드 상단</b>으로 이동</li>
+      </ul>
+    </div>
+    <div class="op">
+      <h3>색 규칙</h3>
+      <ul>
+        <li>잉크 <b>#0C0E12</b> · 페이퍼 <b>#EDE9E1</b> — 기본 바탕</li>
+        <li>시그널 옐로우 <b>#FFD90A</b> — 강조는 한 화면에 딱 한 곳</li>
+        <li>코발트 <b>#1B3BE0</b> — 상승·이동</li>
+        <li>알럿 레드 <b>#E42B15</b> — 긴급·제외 (월 2회 상한)</li>
+        <li>틸 <b>#0B6E63</b> — MD 판단·우선검토</li>
+      </ul>
+    </div>
+    <div class="op">
+      <h3>로테이션</h3>
+      <ul>
+        <li>같은 포맷 <b>3연속 금지</b></li>
+        <li>04 경보는 <b>월 2회</b>, 01 넘버는 <b>주 2회</b>까지</li>
+        <li>주 1회는 반드시 <b>09 인용</b> — 계정의 사람 냄새</li>
+        <li>주말 1장은 <b>07 리스트</b> — 저장 유도</li>
+      </ul>
+    </div>
+    <div class="op">
+      <h3>측정</h3>
+      <ul>
+        <li>포맷별로 <b>도달 대비 프로필 방문율</b>만 봅니다</li>
+        <li>03·07·10은 <b>스와이프 완료율</b>을 따로 봅니다</li>
+        <li>2주 뒤 하위 3종은 교체 — 10종은 고정값이 아닙니다</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:36px;max-width:70ch">
+    한 가지만 남긴다면 <b>F2</b>입니다. 218억을 22px 회색 각주에 넣는 대신 360px로 키우는 것,
+    그 한 가지만 바꿔도 지금 피드는 달라집니다. 나머지 아홉은 그 원칙을 데이터 모양별로 변주한 것뿐입니다.
+  </p>
+</section>
+
+</div>
