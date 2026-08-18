@@ -73,14 +73,24 @@ def mmall_button(keyword: str, mmall: dict | None) -> str:
 
 
 def bullet_lines(text: str) -> list[tuple[str, str]]:
-    """'• 라벨: 내용' 형태의 줄 목록을 (라벨, 내용)으로 파싱한다."""
+    """'• 라벨: 내용' 형태의 줄 목록을 (라벨, 내용)으로 파싱한다.
+
+    불릿 마커(•, -, –, —, ·, ・, *, ▪, ◦)를 모두 허용하고, 마커 없는
+    문단도 라벨 없는 항목으로 살린다. 어떤 형식으로 써도 내용이 있으면
+    절대 빈 결과로 사라지지 않게 한다(MD 판단 공란 재발 방지).
+    """
+    markers = "•-–—·・*▪◦"
     rows = []
     for line in (text or "").splitlines():
         line = line.strip()
-        if not line.startswith("•"):
+        if not line:
             continue
-        body = line.lstrip("• ").strip()
-        if ":" in body:
+        had_marker = line[0] in markers
+        body = line[1:].strip() if had_marker else line
+        if not body:
+            continue
+        # 라벨:내용 분리는 불릿 줄에서만 (일반 문단의 문장 중간 콜론 오인 방지)
+        if had_marker and ":" in body:
             label, rest = body.split(":", 1)
             rows.append((label.strip(), rest.strip()))
         else:
@@ -130,9 +140,16 @@ def render_page(pkg: dict, manifest: list[dict], page_name: str) -> str:
     paragraphs = [" ".join(p.split()) for p in pkg["md_comment_paragraphs"]]
     description = paragraphs[0]
     cards = "\n".join(keyword_card(i + 1, k) for i, k in enumerate(pkg["keywords"]))
+    md_judgment_raw = pkg.get("md_judgment", "")
+    judgment_rows = bullet_lines(md_judgment_raw)
+    if md_judgment_raw.strip() and not judgment_rows:
+        raise ValueError(
+            f"Day {day}: md_judgment에 내용이 있는데 파싱 결과가 비었습니다. "
+            "MD 판단이 공란으로 나갈 수 있어 렌더를 중단합니다."
+        )
     judgment = "".join(
         f"<p><span><b>• {esc(label)}:</b> {esc(body)}</span></p>" if label else f"<p><span>{esc(body)}</span></p>"
-        for label, body in bullet_lines(pkg.get("md_judgment", ""))
+        for label, body in judgment_rows
     )
     focus = "\n".join(f"          <p><span>{esc(p)}</span></p>" for p in paragraphs)
     source_date = pkg.get("source_date") or ""
