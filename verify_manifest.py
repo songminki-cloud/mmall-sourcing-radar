@@ -108,6 +108,21 @@ def main():
         if m_day and int(m_day.group(1)) >= 41 and 'name="generator" content="render-day-page' not in html:
             ok = fail(f"{f.name}가 render_day_page.py 산출물이 아님 — 발행 페이지는 렌더러로만 생성한다")
 
+        # 6-2. focus-section의 'MD 코멘트'/'MD 판단' 블록이 비어 있으면 발행 불가
+        # (2026-08-18 Day 51 식품에서 발행 시 MD 판단 focus-list가 통째로 빈 채 라이브에
+        # 나간 사고 반복 재발 방지. 수동 복원으로 끝내지 않고 발행 게이트로 고정한다.)
+        for heading in ("MD 코멘트", "MD 판단"):
+            block = re.search(
+                r"<h2>" + re.escape(heading) + r"</h2>\s*<div class=\"focus-list\">(.*?)</div>",
+                html, re.S,
+            )
+            if not block:
+                ok = fail(f"{f.name}에 '{heading}' focus-list 블록이 없음")
+                continue
+            paras = re.findall(r"<p><span>(.*?)</span></p>", block.group(1), re.S)
+            if not any(p.strip() for p in paras):
+                ok = fail(f"{f.name}의 '{heading}' focus-list가 비어 있음 (내용 있는 <p>가 하나도 없음)")
+
         # 7. M몰 검색결과 문구가 카드 메모 안에 중복 노출됐는지
         if re.search(r"M몰\s*검색결과\s*[:：]", html):
             ok = fail(f"{f.name} 메모 문장에 '(M몰 검색결과: n개)'가 남아 있음 (버튼과 중복, 텍스트에서 제거해야 함)")
