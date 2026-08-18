@@ -504,5 +504,14 @@
     "rising": 0,
     "page": "day-50-2026-08-17-cosmetics-beauty.html",
     "evidence_docs": []
+  },
+  {
+    "day": 51,
+    "date": "2026-08-18",
+    "category": "식품",
+    "items": 10,
+    "rising": 0,
+    "page": "day-51-2026-08-18-food.html",
+    "evidence_docs": []
   }
 ]
