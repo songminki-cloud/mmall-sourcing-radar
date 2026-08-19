@@ -513,5 +513,14 @@
     "rising": 0,
     "page": "day-51-2026-08-18-food.html",
     "evidence_docs": []
+  },
+  {
+    "day": 52,
+    "date": "2026-08-19",
+    "category": "패션의류",
+    "items": 10,
+    "rising": 2,
+    "page": "day-52-2026-08-19-fashion.html",
+    "evidence_docs": []
   }
 ]
