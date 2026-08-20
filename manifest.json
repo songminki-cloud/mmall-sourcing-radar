@@ -522,5 +522,14 @@
     "rising": 2,
     "page": "day-52-2026-08-19-fashion.html",
     "evidence_docs": []
+  },
+  {
+    "day": 53,
+    "date": "2026-08-20",
+    "category": "출산/육아",
+    "items": 10,
+    "rising": 3,
+    "page": "day-53-2026-08-20-parenting.html",
+    "evidence_docs": []
   }
 ]
